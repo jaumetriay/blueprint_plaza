@@ -1,0 +1,18 @@
+[tool.poetry.scripts]
+start = "premise_update.main:app.run"
+
+[tool.poetry]
+name = "premise-update"
+version = "0.1.0"
+description = ""
+authors = ["Jaume Triay <jaume.triay@baxterplanning.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
