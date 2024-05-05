@@ -1,6 +1,6 @@
-# My Project
+# Premise Update - <I know this is a very bad project name, just for the moment>
 
-Welcome to my project! This project uses [Poetry](https://python-poetry.org/) for dependency management.
+Welcome to our project! This project uses [Poetry](https://python-poetry.org/) for dependency management.
 
 ## Installation
 
