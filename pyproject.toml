@@ -1,8 +1,8 @@
 [tool.poetry.scripts]
-start = "premise_update.main:app.run"
+start = "blueprint_plaza.main:app.run"
 
 [tool.poetry]
-name = "premise-update"
+name = "blueprint-plaza"
 version = "0.1.0"
 description = ""
 authors = ["Jaume Triay <jaume.triay@baxterplanning.com>"]
@@ -11,6 +11,13 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "^3.0.3"
+flask-login = "^0.6.3"
+sqlalchemy = "^2.0.30"
+psycopg2-binary = "^2.9.9"
+psycopg2 = "^2.9.9"
+flask-wtf = "^1.2.1"
+wtforms = "^3.1.2"
+
 
 
 [build-system]
