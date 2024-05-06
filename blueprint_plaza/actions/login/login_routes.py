@@ -31,8 +31,7 @@ def logout():
     return 'Logged out'
 
 
-@login_blueprint.route(
-    '/protected')  # this is just an example for endpoints that require login, in the future this should go somewhere else
+@login_blueprint.route('/protected')  # this is just an example for endpoints that require login, in the future this should go somewhere else
 @login_required
 def protected():
     return 'Logged in as: ' + str(current_user.get_id())
