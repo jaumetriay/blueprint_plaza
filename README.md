@@ -49,3 +49,7 @@ This file contains the form for the publish functionality. The form includes fie
 
 This file contains the SQLAlchemy model for a property. The Property class includes attributes for the premise id, base value, expected value, 
 and description of a property.
+
+
+
+Hola soc jo
