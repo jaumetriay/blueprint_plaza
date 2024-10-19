@@ -1,18 +1,19 @@
-from flask import Flask, render_template
-from blueprint_plaza.actions.login.login_routes import login_blueprint, login_manager
-from blueprint_plaza.actions.publish.publish_routes import publish_blueprint
+from flask import Flask
+from flask_caching import Cache
+from blueprint_plaza.routes import init_routes
+
+"""
+This module initializes the Flask application and sets up caching.
+
+It creates a Flask app, configures a simple cache, initializes routes,
+and runs the app in debug mode if executed as the main script.
+
+The app uses blueprint_plaza.routes for routing configuration.
+"""
 
 app = Flask(__name__)
-app.register_blueprint(login_blueprint)
-app.register_blueprint(publish_blueprint)
-app.secret_key = 'my template secret key'  # need to replace with actual key
-login_manager.init_app(app)
-
-
-@app.route('/')
-def home():
-    return render_template('placeholder.html')
-
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+init_routes(app, cache)
 
 if __name__ == '__main__':
     app.run(debug=True)

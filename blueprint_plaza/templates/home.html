@@ -1,0 +1,28 @@
+<!--
+This HTML template represents the home page of the Ad Display application.
+It displays a list of ads with clickable links to individual ad pages.
+The template uses Jinja2 templating syntax for dynamic content rendering.
+
+Key features:
+- Responsive design with viewport meta tag
+- External CSS stylesheet linked
+- Dynamic rendering of ad list using Jinja2 for loop
+- Links to individual ad pages using Flask's url_for function
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Display Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Ad Display</h1>
+    <ul>
+    {% for ad in ads %}
+        <li><a href="{{ url_for('get_ad', ad_id=ad.id) }}">{{ ad.title }}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

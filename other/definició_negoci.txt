@@ -1,0 +1,41 @@
+﻿Definició del Producte: 
+
+    1. Captar propietaris de bens immobles que vulguin aplicar una reforma,amb una posterior venda[1], però que necessitin o prefereixin un inversor extern.
+
+    2. Maximixar la publicitat d’aquestes propietats interessades en els nostres serveis mitjançant, entre altres, plataformes web pròpies.
+       
+    3. Atreure inversors interessats en aquestes oportunitats mitjançant les eines esmentades en el punt dos.
+       
+    4. Administrar el procés de venda(?)
+ 
+[1] A futur, ampliable a altres formes de rentabilitat com lloguer o negoci. 
+[?] És incert si aquest procés l’hauriem d’administrar nosaltres.
+
+Model de Negoci: 
+
+    1. El propietari aporta el seu immoble valorat en (x), publicant-lo a la nostra plataforma, on li aplicarem una comisió per aquest servei[2].
+       
+    2. Nosaltres apliquem un estudi de mercat sobre el valor teòric després de la reforma, i els costos de la mateixa[3], què haurà d’aportar l’inversor[4].
+       
+    3. Un cop hi hagi un interés per l’inversor, posem en contacte les dos parts i li cobrem una comissió a aquest[2]. 
+       
+    4. Podem externalitzar la contractació de l’empresa de reformes a l’inversor, o bé encarregar-nos d’aquest procés internament. 
+       
+    5. Un cop la propietat s’hagi venut, ens portem un percentage a determinar, directament proporcional a l’inversió inicial de les dos parts. En cas de rentabilitat negativa, no ens emportem res.  
+
+[2] Podem cobrar una molt reduïda comissió que podem incrementar un cop tinguem més clients. 
+[3] Podem ofertar nivells de reforma incrementals, amb acabats més o menys exclusius, depenent de la predisposició de l’inversor, i fer recomanacions adequades a les circumstàncies. 
+[4] També es pot admetre que el mateix propietari vulgui aportar una part de la reforma. 
+
+Exemple:
+
+1. Propietari: Vivenda a reformar, valorada en 35.000 EUR
+2. Estimació costos de reforma: 100.000 EUR
+3. Aportació inversor: 70.000 EUR
+4. Aportació propietari: 30.000 EUR
+5. Aportació total propietari: 35.000 EUR+30.000 EUR = 65.000 EUR
+6. Aportació total inversor: 70.000 EUR
+7. Estimació preu de venda: 350.000 EUR
+8. Commissió inicial propietari 0.5% sobre l’estimat de venda   respecte el % del capital aportat:
+	0.5% * (65.000/(65.000 + 70.000))
+

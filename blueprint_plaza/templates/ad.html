@@ -1,0 +1,33 @@
+<!--
+This HTML template displays the details of a single advertisement.
+It includes the ad's title, description, and image (if available).
+The page also provides a link to return to the home page.
+
+Template variables:
+- ad: An object containing the advertisement details (title, description, image_url)
+
+CSS:
+- Styles are linked from the 'static/css/style.css' file
+
+Note: This template extends the base layout and uses Flask's url_for() function
+for generating URLs for static assets and routes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ ad.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="ad-container">
+        <h1>{{ ad.title }}</h1>
+        <p>{{ ad.description }}</p>
+        {% if ad.image_url %}
+            <img src="{{ ad.image_url }}" alt="{{ ad.title }}" style="max-width: 100%;">
+        {% endif %}
+        <a href="{{ url_for('home') }}" class="return-home-button">Return Home</a>
+    </div>
+</body>
+</html>
