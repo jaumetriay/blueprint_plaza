@@ -29,5 +29,4 @@ COPY . .
 # Expose the port the app runs on
 EXPOSE 5000
 
-# Command to run the application
-CMD ["poetry", "run", "start"]
+CMD gunicorn --bind 0.0.0.0:$PORT "app:create_app()"
