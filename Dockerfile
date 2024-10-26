@@ -21,7 +21,10 @@ COPY pyproject.toml poetry.lock ./
 
 # Install project dependencies
 RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi
+    && poetry install --no-interaction --no-ansi \
+
+# Generate requirements.txt
+RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 # Copy the rest of the application's code
 COPY . .
