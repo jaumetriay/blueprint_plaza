@@ -1,5 +1,5 @@
 from flask import render_template, redirect, url_for, abort
-from blueprint_plaza.utils.read_json import load_ads
+from utils.read_json import load_ads
 
 """
 Initialize routes for the Flask application.
