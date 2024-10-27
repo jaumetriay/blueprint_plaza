@@ -11,8 +11,8 @@ Returns:
     dict: A dictionary containing the advertisement data loaded from the JSON file.
 """
 def load_ads():
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    json_path = os.path.join(base_dir, 'blueprint_plaza', 'static', 'json', 'ads.json')
+    json_path = "static/json/ads.json"
+    print(json_path)
     with open(json_path, 'r') as f:
         return json.load(f)
 
