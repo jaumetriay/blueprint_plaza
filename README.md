@@ -3,19 +3,19 @@
 Welcome to our project! A solution for premises with market potential in need for real-state investors.
 
 ## Installation
-This project uses [Poetry](https://python-poetry.org/) for dependency management.
-
-Before you can use this project, you need to install Poetry. Follow the instructions on the [official Poetry website](https://python-poetry.org/docs/#installation).
-Once you have Poetry installed, you can install the project dependencies with:
+To install the requirements.txt first create a virtual environment and activate it with the commands below
 
 ```bash
-poetry install
+python -m venv venv
+source /venv/bin/activate
+
 ```
 
-then run to start the project
+Then install the requirements and run the project.
 
 ```bash
-poetry run start
+pip install -r requirements.txt
+python3 app.py 
 ```
 
  ## Folder Structure
@@ -34,19 +34,18 @@ poetry run start
 ¡Bienvenido a nuestro proyecto! Una solución para propiedades con potencial de mercado que necesitan inversores inmobiliarios.
 
 ## Instalación
-Este proyecto utiliza [Poetry](https://python-poetry.org/) para la gestión de dependencias.
-
-Antes de poder usar este proyecto, necesitas instalar Poetry. Sigue las instrucciones en el [sitio web oficial de Poetry](https://python-poetry.org/docs/#installation).
-Una vez que tengas Poetry instalado, puedes instalar las dependencias del proyecto con:
+Para instalar los requisitos del archivo requirements.txt, primero cree un entorno virtual y actívelo con los comandos a continuación
 
 ```bash
-poetry install
+python -m venv venv
+source /venv/bin/activate
 ```
 
-luego para correr el proyecto 
+Luego instale los requisitos y ejecute el proyecto.
 
 ```bash
-poetry run start
+pip install -r requirements.txt
+python3 app.py 
 ```
 ### Estructura de Carpetas
 /static: Contiene archivos estáticos (CSS, JavaScript, imágenes)

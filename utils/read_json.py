@@ -1,6 +1,5 @@
 
 import json
-import os
 """
 Load advertisements from a JSON file.
 

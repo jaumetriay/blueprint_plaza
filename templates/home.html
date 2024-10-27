@@ -16,13 +16,39 @@ Key features:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ad Display Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Welcome to the Ad Display</h1>
-    <ul>
-    {% for ad in ads %}
-        <li><a href="{{ url_for('get_ad', ad_id=ad.id) }}">{{ ad.title }}</a></li>
-    {% endfor %}
-    </ul>
+    <header>
+        <nav>
+            <div class="logo">Gibert & Triay </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Gibert & Triay</h1>
+        <p class="intro">Discover the most exclusive investing oportunities from our collection.</p>
+
+        <section class="ad-list">
+            {% for ad in ads %}
+                <div class="ad-item">
+                    <a href="{{ url_for('get_ad', ad_id=ad.id) }}">
+                        <h2>{{ ad.title }}</h2>
+                        <p class="ad-description">{{ ad.description[:100] }}...</p>
+                        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gibert & Triay. All rights reserved.</p>
+    </footer>
 </body>
 </html>
