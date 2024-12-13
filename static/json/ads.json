@@ -1,20 +1,72 @@
 [
   {
     "id": 1,
-    "title": "Ad 1",
-    "description": "This is the first ad",
-    "image_url": "/static/images/porsche.png"
+    "title": "House in Maple Grove Avenue",
+    "description": "Charming Victorian-style house with original hardwood floors and high ceilings. Features a wraparound porch perfect for summer evenings. Recently renovated kitchen with granite countertops and stainless steel appliances. Three spacious bedrooms upstairs with built-in closets. Large backyard with mature trees and a garden area. Walking distance to local parks and shops.",
+    "image_before": ["/static/images/old-1.png","/static/images/old-2.png"],
+    "image_after": ["/static/images/new-1.png", "/static/images/old-3.png"]
   },
   {
     "id": 2,
-    "title": "Ad 2",
-    "description": "This is the second ad",
-    "image_url": "/static/images/porsche.png"
+    "title": "Apartment in Riverside Boulevard",
+    "description": "Modern luxury apartment with floor-to-ceiling windows offering stunning city views. Open concept living area with designer finishes. Gourmet kitchen includes breakfast bar and wine fridge. Master suite features walk-in closet and ensuite bathroom. Building amenities include rooftop pool, fitness center, and 24-hour concierge.",
+    "image_before": "/static/images/old-2.png",
+    "image_after": "/static/images/new-2.png"
   },
   {
     "id": 3,
-    "title": "Ad 3",
-    "description": "This is the third ad",
-    "image_url": null
+    "title": "Cottage in Willow Lane",
+    "description": "Cozy countryside cottage with exposed wooden beams and stone fireplace. Updated while maintaining rustic charm. Kitchen features farmhouse sink and vintage-style appliances. Two bedrooms with views of the surrounding meadows. Private garden with stone pathways and herb garden. Perfect weekend getaway or permanent residence.",
+    "image_before": "/static/images/old-3.png",
+    "image_after": "/static/images/new-3.png"
+  },
+  {
+    "id": 4,
+    "title": "House in Oakwood Drive",
+    "description": "Contemporary family home with smart home features throughout. Open floor plan with double-height living room. Chef's kitchen with center island and custom cabinetry. Four bedrooms including main floor master suite. Home theater room and finished basement. Three-car garage and professional landscaping.",
+    "image_before": "/static/images/old-4.png",
+    "image_after": "/static/images/new-4.png"
+  },
+  {
+    "id": 5,
+    "title": "Apartment in Crown Heights",
+    "description": "Stylish loft apartment in converted industrial building. Exposed brick walls and concrete floors. Custom kitchen with waterfall island. Sleeping area with custom closet system. Home office nook with built-in desk. Building features secure entry and package reception.",
+    "image_before": "/static/images/old-5.png",
+    "image_after": "/static/images/new-5.png"
+  },
+  {
+    "id": 6,
+    "title": "Cottage in Sunnyside Court",
+    "description": "Beachfront cottage with panoramic ocean views. Recently updated interior with coastal design elements. Bright kitchen with quartz counters and breakfast nook. Two bedrooms plus sleeping loft. Wraparound deck perfect for outdoor entertaining. Private path to beach access.",
+    "image_before": "/static/images/old-6.png",
+    "image_after": "/static/images/new-6.png"
+  },
+  {
+    "id": 7,
+    "title": "House in Evergreen Terrace",
+    "description": "Mediterranean-style villa with courtyard entry. Hand-painted tiles and wrought iron details throughout. Gourmet kitchen with wood-fired pizza oven. Five bedrooms including guest suite. Resort-style backyard with pool and outdoor kitchen. Wine cellar and tasting room.",
+    "image_before": "/static/images/old-7.png",
+    "image_after": "/static/images/new-7.png"
+  },
+  {
+    "id": 8,
+    "title": "Apartment in Harbor View",
+    "description": "Penthouse apartment with private rooftop terrace. Floor-to-ceiling windows in every room. Designer kitchen with premium appliances. Three bedrooms with custom closets. Home automation system throughout. Building includes valet parking and private elevator access.",
+    "image_before": "/static/images/old-8.png",
+    "image_after": "/static/images/new-8.png"
+  },
+  {
+    "id": 9,
+    "title": "Cottage in Forest Glen",
+    "description": "Mountain retreat with stunning valley views. Stone fireplace and vaulted ceilings. Updated kitchen with breakfast bar. Three bedrooms plus loft space. Wraparound deck with hot tub. Attached workshop and storage space. Close to hiking trails and ski slopes.",
+    "image_before": "/static/images/old-9.png",
+    "image_after": "/static/images/new-9.png"
+  },
+  {
+    "id": 10,
+    "title": "House in Royal Gardens",
+    "description": "Colonial-style estate on manicured grounds. Grand entrance with spiral staircase. Chef's kitchen with butler's pantry. Six bedrooms including separate au pair suite. Home gym and media room. Heated pool and tennis court. Three-acre lot with formal gardens.",
+    "image_before": "/static/images/old-10.png",
+    "image_after": "/static/images/new-10.png"
   }
 ]
