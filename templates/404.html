@@ -9,10 +9,14 @@ The template uses Flask's url_for() function to generate the correct URL for the
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Sorry, the page you are looking for doesn't exist.</p>
-    <a href="{{ url_for('home') }}">Go back to home</a>
+    <main>
+        <div class="ad-detail">
+            <h1>It seems the page you are looking for does not exist.</h1>
+            <p class="ad-description">Sorry, the page you are looking for doesn't exist.</p>
+            <a href="{{ url_for('home') }}" class="return-home-button">Go back to home</a>
+        </div>
+    </main>
 </body>
-</html>
