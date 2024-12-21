@@ -41,3 +41,7 @@ def init_routes(app, cache):
             return render_template('ad.html', ad=ad)
         else:
             return abort(404)
+
+    @app.route('/about', strict_slashes=False, methods=['GET'])
+    def about():
+        return render_template('about.html')
