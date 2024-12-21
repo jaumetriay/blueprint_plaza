@@ -1,51 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gibert & Triay</title>
+  <!-- Vincula tu hoja de estilos -->
+  <link rel="stylesheet" href="static/css/style.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="{{ url_for('home') }}">Gibert & Triay</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <p class="intro">Discover the most exclusive investing oportunities from our collection.</p>
+  <!-- HEADER NORMAL (arriba del todo) -->
+  <header class="main-header">
+    <div class="container header-flex">
+      <!-- Logo a la izquierda, convertido en enlace a Home (index.html) -->
+      <div class="logo-header">
+        <a href="index.html">
+          <img src="static/images/logo.png" alt="Tu Logo" />
+        </a>
+      </div>
 
-        <section class="ad-list">
-            {% for ad in ads %}
-                <div class="ad-item">
-                    <a href="{{ url_for('get_ad', ad_id=ad.id) }}">
-                        <div class="ad-hover-images">
-                            {% for image in ad.image_before %}
-                                <img class="before-image" src="{{ image }}" alt="Before" style="--image-index: {{ loop.index0 }}">
-                            {% endfor %}
-                            {% for image in ad.image_after %}
-                                <img class="after-image" src="{{ image }}" alt="After" style="--image-index: {{ loop.index0 }}">
-                            {% endfor %}
-                        </div>
-                        <h2>{{ ad.title }}</h2>
-                        <p class="ad-description">{{ ad.description[:100] }}...</p>
-                        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                </div>
-            {% endfor %}
-        </section>
-    </main>
+      <nav class="nav">
+        <ul>
+          <!-- Home (si quieres mantenerlo como ancla, puedes hacerlo con # o con index.html) -->
+          <li><a href="index.html">Home</a></li>
+          <!-- About Us => apunta a about.html -->
+          <li><a href="about.html">About Us</a></li>
+          <!-- Contact => sigue anclado a la sección Contact de esta misma página -->
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2024 Gibert & Triay. All rights reserved.</p>
-    </footer>
+  <!-- HERO SECTION con slideshow de fondo -->
+  <section class="hero">
+    <div class="slideshow">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+    </div>
+    <div class="overlay">
+      <div class="hero-text">
+        <!-- Logo centrado en el Hero (opcional) -->
+        <img src="static/images/logo.png" alt="Tu Logo" class="logo-hero" />
+        <h1>Donem servei professional al teu immoble</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <p>Lo que ofrecemos para impulsar tu crecimiento financiero</p>
+      <div class="services-cards">
+        <div class="card">
+          <img src="static/images/icon1.png" alt="Icono Asesoría" />
+          <h3>Asesoría Personalizada</h3>
+          <p>Planea tu estrategia de inversión con expertos certificados.</p>
+        </div>
+        <div class="card">
+          <img src="static/images/icon2.png" alt="Icono Gestión" />
+          <h3>Gestión de Portafolios</h3>
+          <p>Diversificamos y optimizamos tu portafolio con seguridad y transparencia.</p>
+        </div>
+        <div class="card">
+          <img src="static/images/icon3.png" alt="Icono Research" />
+          <h3>Investigación & Análisis</h3>
+          <p>Te mantenemos informado con estudios de mercado y tendencias mundiales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LÍNEA DIVISORIA -->
+  <hr class="section-divider" />
+
+  <!-- PROJECTS SECTION (Reemplaza la antigua sección "about") -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2>Proyectos Recientes</h2>
+      <p>Aquí mostramos algunos ejemplos de inmuebles o proyectos disponibles.</p>
+
+      <div class="projects-grid">
+        <!-- Proyecto 1 -->
+        <div class="project-card">
+          <div class="project-image">
+            <!-- Etiqueta "Nuevo Proyecto" en verde, posición top-right -->
+            <span class="new-project-label">Nuevo Proyecto</span>
+            <!-- Imagen vertical de la propiedad -->
+            <img src="static/images/old-1.png" alt="Propiedad 1" class="vertical-image" />
+            <!-- Ciudad (ejemplo) en la parte inferior -->
+            <div class="city-label">Barcelona</div>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <span class="new-project-label">Nuevo Proyecto</span>
+            <img src="static/images/old-2.png" alt="Propiedad 2" class="vertical-image" />
+            <div class="city-label">Madrid</div>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <span class="new-project-label">Nuevo Proyecto</span>
+            <img src="static/images/old-3.png" alt="Propiedad 3" class="vertical-image" />
+            <div class="city-label">Valencia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <p>Completa el siguiente formulario y nos pondremos en contacto contigo.</p>
+      <form>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="#about">Quiénes Somos</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Trabaja con Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Políticas de Privacidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contáctanos</h3>
+        <p>Dirección: Girona</p>
+        <p>Tel: +34 616 26 53 07</p>
+        <p>Email: info@giberttriay.com</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2024 Gibert & Triay - Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
 </body>
 </html>
