@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gibert & Triay</title>
+  <!-- Vincula tu hoja de estilos -->
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+
+  <!-- 1) Checkbox oculto para controlar la barra lateral -->
+  <input type="checkbox" id="menu-toggle" />
+
+  <!-- 2) Botón hamburguesa (3 líneas) -->
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <!-- 3) SIDEBAR oculta; se despliega al marcar #menu-toggle -->
+  <aside class="sidebar">
+    <!-- Menú lateral con tus enlaces -->
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- HERO SECTION con slideshow de fondo -->
+  <section class="hero">
+    <div class="slideshow">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+    </div>
+    <div class="overlay">
+      <div class="hero-text">
+        <h1>Barcelona</h1>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="#about">Quiénes Somos</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Trabaja con Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Políticas de Privacidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contáctanos</h3>
+        <p>Dirección: Girona</p>
+        <p>Tel: +34 616 26 53 07</p>
+        <p>Email: info@giberttriay.com</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2024 Gibert & Triay - Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
