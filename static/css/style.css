@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-  overflow-x: hidden; /* Para evitar scroll horizontal */
+  overflow-x: hidden;
 }
 
 /* Contenedor genérico */
@@ -26,49 +26,149 @@ body {
   margin: 0 auto;
 }
 
-/* =======================
-   HEADER
-   (LOGO IZQUIERDA, MENÚ DERECHA)
-======================= */
-.main-header {
-  width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+/* =========================
+   CHECKBOX OCULTO
+========================= */
+#menu-toggle {
+  display: none;
 }
 
-.header-flex {
+/* =========================
+   BOTÓN HAMBURGUESA
+   (arriba a la derecha)
+========================= */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;   /* se ubica a la derecha */
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 9999; /* por encima del slideshow */
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  height: 70px; /* Ajusta a tu preferencia */
 }
 
-/* Logo a la izquierda */
-.logo-header img {
-  max-height: 45px; /* Ajusta tamaño si gustas */
+/* Por defecto, las líneas son BLANCAS */
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff; 
+  border-radius: 2px;
+  transition: 0.4s;
 }
 
-/* Menú a la derecha */
-.nav ul {
+/* Al hacer clic, el checkbox se marca.
+   Queremos que las líneas se pongan NEGRAS */
+#menu-toggle:checked ~ .hamburger span {
+  background-color: #000; 
+}
+
+/* Animación para transformarse en "X" */
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* =========================
+   SIDEBAR A LA DERECHA
+========================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;   /* Oculto a la derecha */
+  left: auto;      /* Anulamos left, ya no lo usamos */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;   
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  z-index: 9998;
+  padding-top: 60px;
+  transition: right 0.3s ease;
+}
+
+.sidebar-nav {
+  margin-bottom: 0; /* o un valor mínimo si quieres muy poco espacio */
+}
+
+
+/* Cuando el checkbox está marcado => sidebar se muestra */
+#menu-toggle:checked ~ .sidebar {
+  right: 0;
+}
+
+/* Menú lateral */
+.sidebar-nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 1.5rem;
 }
 
-.nav ul li a {
-  text-decoration: none;
+.sidebar hr {
+  margin-top: 1.5rem;    /* Ajusta a tu gusto */
+  margin-bottom: 1rem;   /* Para separarlo un poco de la sección de idiomas */
+}
+
+
+.sidebar-nav ul li a {
   color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.3rem 0;
+  border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
-.nav ul li a:hover {
-  color: #007bfc;
+.sidebar-nav ul li a:hover {
+  background-color: #eee;
 }
+
+.sidebar-languages {
+  margin-top: 1.5rem; /* o 2rem, o el valor que quieras */
+}
+
+/* Estils per al menú d’idiomes dins la sidebar */
+.sidebar-languages ul {
+  list-style: none;
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-languages ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.3rem 0;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center; /* per alinear text i imatge */
+  gap: 0.5rem;        /* espai entre la bandereta i el text */
+}
+
+.sidebar-languages ul li a:hover {
+  background-color: #eee;
+}
+
+.sidebar-nav {
+  margin-bottom: 1.5rem;
+}
+
 
 /* =======================
    HERO SECTION
-   -> Slideshow de fondo
+   -> Slideshow
 ======================= */
 .hero {
   width: 100%;
@@ -79,7 +179,6 @@ body {
   justify-content: center;
 }
 
-/* Slideshow contenedor */
 .slideshow {
   position: absolute;
   top: 0;
@@ -90,40 +189,37 @@ body {
   z-index: 1;
 }
 
-/* Cada slide con una imagen de fondo */
 .slide {
   position: absolute;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0; /* Comienza invisible */
+  opacity: 0;
   animation: fade 9s infinite;
 }
 
 .slide1 {
-  background-image: url("../images/old-1.png");
+  background-image: url("../images/01-1.jpg");
   animation-delay: 0s;
 }
 .slide2 {
-  background-image: url("../images/new-1.png");
+  background-image: url("../images/07-1.jpg");
   animation-delay: 3s;
 }
 .slide3 {
-  background-image: url("../images/old-2.png");
+  background-image: url("../images/08-1.jpg");
   animation-delay: 6s;
 }
 
-/* Keyframes: cada imagen se muestra ~3s */
 @keyframes fade {
   0%   { opacity: 0; }
-  8%   { opacity: 1; } 
+  8%   { opacity: 1; }
   33%  { opacity: 1; }
   41%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
-/* Capa oscura y texto */
 .overlay {
   width: 100%;
   height: 100%;
@@ -132,7 +228,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 2; /* Encima del slideshow */
+  z-index: 2;
 }
 
 .hero-text {
@@ -142,7 +238,6 @@ body {
   padding: 0 1rem;
 }
 
-/* Logo en el centro del hero (Opcional) */
 .logo-hero {
   max-width: 200px;
   margin-bottom: 1rem;
@@ -151,23 +246,6 @@ body {
 .hero-text h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-}
-.hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.btn-hero {
-  padding: 0.8rem 1.5rem;
-  background-color: #007bfc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-.btn-hero:hover {
-  background-color: #005bb0;
 }
 
 /* =======================
@@ -217,17 +295,17 @@ body {
 }
 
 /* =======================
-   Sección divider
+   LÍNEA DIVISORIA
 ======================= */
 .section-divider {
-  border: none;            /* Elimina bordes predeterminados de <hr> */
-  border-top: 1px solid #ddd;  /* Línea muy fina y clara */
-  margin: 2rem 0;       /* Espacio vertical (ajusta a tu gusto) */
-  width: 100%;              /* Ancho de la línea en % del contenedor */
+  border: none;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  margin: 2rem 0;
 }
 
 /* =======================
-   Sección de Proyectos
+   PROJECTS SECTION
 ======================= */
 .projects {
   padding: 4rem 0;
@@ -235,17 +313,15 @@ body {
   text-align: center;
 }
 
+/* Agrega este bloque */
 .projects h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Ajusta el valor a tu gusto */
 }
 
-.projects p {
-  color: #555;
-  margin-bottom: 2rem;
+.projects-description {
+  margin-bottom: 2rem; /* Ajusta el valor a tu gusto */
 }
 
-/* Grid para las tarjetas de proyectos */
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
@@ -253,54 +329,57 @@ body {
   justify-content: center;
 }
 
-/* Cada tarjeta individual */
 .project-card {
-  /* Ajusta el ancho según tu gusto */
-  width: 250px; 
-  /* O usa algo responsive, por ejemplo: flex: 1 1 250px; */
+  display: block;
+  width: 250px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Contenedor de la imagen, con posición relativa
-   para colocar etiquetas en esquinas */
+.project-card:hover {
+  /* Un ligero escalado, sin rotaciones */
+  transform: scale(1.02);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+
+/* Mantenemos .project-image con su estilado interno */
 .project-image {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  height: 400px; 
 }
 
-/* Imagen vertical */
 .vertical-image {
-  width: 100%;
-  height: 400px; /* para simular foto vertical */
-  object-fit: cover; /* recorta la imagen para ajustarse */
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Etiqueta "Nuevo Proyecto" en verde, esquina superior derecha */
 .new-project-label {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #48c774; /* verde */
+  background-color: #48c774;
   color: #fff;
   font-size: 0.9rem;
   padding: 4px 8px;
   border-radius: 4px;
 }
 
-/* Nombre de la ciudad en la parte inferior
-   (puedes usar un fondo semitransparente para mayor legibilidad) */
 .city-label {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  color: #fff;
   background-color: rgba(0,0,0,0.5);
+  color: #fff;
   padding: 4px 8px;
   border-radius: 4px;
 }
-
 
 /* =======================
    CONTACT SECTION
@@ -312,12 +391,11 @@ body {
 }
 
 .contact h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Ajusta el valor a tu gusto */
 }
+
 .contact p {
-  margin-bottom: 2rem;
-  color: #555;
+  margin-bottom: 2rem; /* Ajusta el valor según quieras */
 }
 
 .contact form {
@@ -395,25 +473,16 @@ body {
 }
 
 /* =========================
-   RESPONSIVE (Móvil/Tablet)
+   RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  /* Ajustes para el header en móvil */
-  .header-flex {
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    height: auto; 
-    padding: 1rem 0; 
+  /* La sidebar ocupa 60% en móvil, ajústalo si gustas */
+  .sidebar {
+    width: 60%;
   }
-
-  /* About en una sola columna */
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Services en columna */
-  .services-cards {
+  /* Ajustes a Services y Projects en columna */
+  .services-cards,
+  .projects-grid {
     flex-direction: column;
     align-items: center;
   }
