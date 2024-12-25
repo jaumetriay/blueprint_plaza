@@ -13,6 +13,7 @@ projects = [
         ],
         'descripcion': 'Descripción detallada del Proyecto Barcelona.',
         'calle': 'Calle Example 1',
+        'precio': '30.000',
         # Puedes agregar más campos según necesites
     },
     {
@@ -27,6 +28,7 @@ projects = [
         ],
         'descripcion': 'Descripción detallada del Proyecto Madrid.',
         'calle': 'Calle Example 2',
+        'precio': '50.000',
     },
     {
         'id': 'proyecto3',
@@ -40,6 +42,7 @@ projects = [
         ],
         'descripcion': 'Descripción detallada del Proyecto Valencia.',
         'calle': 'Calle Example 3',
+        'precio': '25.000',
     },
     # Agrega más proyectos según necesites
 ]

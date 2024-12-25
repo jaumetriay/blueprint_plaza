@@ -544,3 +544,120 @@ body {
     flex-direction: column;
   }
 }
+
+/* =======================
+       TABS STYLES
+======================= */
+
+/* Contenedor de pestañas */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, border-bottom 0.3s;
+}
+
+.tab-button:hover {
+  background-color: #eee;
+}
+
+.tab-button.active {
+  background-color: #fff;
+  border-bottom: 2px solid #007bfc;
+  font-weight: bold;
+}
+
+/* Contenedor de contenido de pestañas */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Galería de fotos */
+.photos-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery-image {
+  width: calc(33.333% - 1rem);
+  max-width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.map-container {
+  width: 100%;
+  height: 400px; /* Ajusta la altura según tus necesidades */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Responsivo para el iframe */
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Ajustar la altura en dispositivos móviles */
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-container {
+    height: 250px;
+  }
+}
+
+/* Precios */
+.pricing {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pricing p {
+  margin-bottom: 1rem;
+}
+
+/* Responsivo para pestañas */
+@media (max-width: 768px) {
+  .gallery-image {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-image {
+    width: 100%;
+  }
+}
