@@ -5,32 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gibert & Triay</title>
   <!-- Vincula tu hoja de estilos -->
-  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
 
-  <!-- HEADER NORMAL (arriba del todo) -->
-  <header class="main-header">
-    <div class="container header-flex">
-      <!-- Logo a la izquierda, convertido en enlace a Home (index.html) -->
-      <div class="logo-header">
-        <a href="index.html">
-          <img src="static/images/logo.png" alt="Tu Logo" />
-        </a>
-      </div>
+  <!-- 1) Checkbox oculto para controlar la barra lateral -->
+  <input type="checkbox" id="menu-toggle" />
 
-      <nav class="nav">
-        <ul>
-          <!-- Home (si quieres mantenerlo como ancla, puedes hacerlo con # o con index.html) -->
-          <li><a href="index.html">Home</a></li>
-          <!-- About Us => apunta a about.html -->
-          <li><a href="about.html">About Us</a></li>
-          <!-- Contact => sigue anclado a la sección Contact de esta misma página -->
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- 2) Botón hamburguesa (3 líneas) -->
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <!-- 3) SIDEBAR oculta; se despliega al marcar #menu-toggle -->
+  <aside class="sidebar">
+    <!-- Menú lateral con tus enlaces -->
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Separador visual opcional -->
+    <hr />
+
+    <!-- MENÚ D'IDIOMES -->
+    <nav class="sidebar-languages">
+      <ul>
+        <!-- Les icones/imatges són només exemples, substitueix-les pels arxius reals -->
+        <li>
+          <a href="#">
+            <img src="static/images/flag-cat.png" alt="Català" width="20" height="14">
+            Català
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-es.png" alt="Castellano" width="20" height="14">
+            Castellano
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-uk.png" alt="English" width="20" height="14">
+            English
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-fr.png" alt="Français" width="20" height="14">
+            Français
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
 
   <!-- HERO SECTION con slideshow de fondo -->
   <section class="hero">
@@ -76,45 +109,28 @@
   <!-- LÍNEA DIVISORIA -->
   <hr class="section-divider" />
 
-  <!-- PROJECTS SECTION (Reemplaza la antigua sección "about") -->
+  <!-- PROJECTS SECTION -->
   <section class="projects" id="projects">
     <div class="container">
       <h2>Proyectos Recientes</h2>
-      <p>Aquí mostramos algunos ejemplos de inmuebles o proyectos disponibles.</p>
+      <p class="projects-description">
+        Echa un vistazo a algunos de nuestros proyectos recientes.
+      </p>
 
       <div class="projects-grid">
-        <!-- Proyecto 1 -->
-        <div class="project-card">
-          <div class="project-image">
-            <!-- Etiqueta "Nuevo Proyecto" en verde, posición top-right -->
-            <span class="new-project-label">Nuevo Proyecto</span>
-            <!-- Imagen vertical de la propiedad -->
-            <img src="static/images/old-1.png" alt="Propiedad 1" class="vertical-image" />
-            <!-- Ciudad (ejemplo) en la parte inferior -->
-            <div class="city-label">Barcelona</div>
-          </div>
-        </div>
-
-        <!-- Proyecto 2 -->
-        <div class="project-card">
-          <div class="project-image">
-            <span class="new-project-label">Nuevo Proyecto</span>
-            <img src="static/images/old-2.png" alt="Propiedad 2" class="vertical-image" />
-            <div class="city-label">Madrid</div>
-          </div>
-        </div>
-
-        <!-- Proyecto 3 -->
-        <div class="project-card">
-          <div class="project-image">
-            <span class="new-project-label">Nuevo Proyecto</span>
-            <img src="static/images/old-3.png" alt="Propiedad 3" class="vertical-image" />
-            <div class="city-label">Valencia</div>
-          </div>
-        </div>
+        {% for project in projects %}
+          <a href="{{ url_for('project_detail', project_id=project.id) }}" class="project-card">
+            <div class="project-image">
+              <span class="new-project-label">Nuevo Proyecto</span>
+              <img src="{{ url_for('static', filename='images/' + project.imagen) }}" alt="{{ project.nombre }}" class="vertical-image" />
+              <div class="city-label">{{ project.ciudad }}</div>
+            </div>
+          </a>
+        {% endfor %}
       </div>
     </div>
   </section>
+
 
   <!-- CONTACT SECTION -->
   <section class="contact" id="contact">
