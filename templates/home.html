@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gibert & Triay</title>
   <!-- Vincula tu hoja de estilos -->
-  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
 
@@ -24,8 +24,8 @@
     <!-- Menú lateral con tus enlaces -->
     <nav class="sidebar-nav">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -118,32 +118,15 @@
       </p>
 
       <div class="projects-grid">
-        <!-- Proyecto 1 -->
-        <a href="proyecto1.html" class="project-card">
-          <div class="project-image">
-            <span class="new-project-label">Nuevo Proyecto</span>
-            <img src="static/images/proj1_new.jpg" alt="Propiedad 1" class="vertical-image" />
-            <div class="city-label">Barcelona</div>
-          </div>
-        </a>
-
-        <!-- Proyecto 2 -->
-        <a href="proyecto2.html" class="project-card">
-          <div class="project-image">
-            <span class="new-project-label">Nuevo Proyecto</span>
-            <img src="static/images/proj10_new.jpg" alt="Propiedad 2" class="vertical-image" />
-            <div class="city-label">Madrid</div>
-          </div>
-        </a>
-
-        <!-- Proyecto 3 -->
-        <a href="proyecto3.html" class="project-card">
-          <div class="project-image">
-            <span class="new-project-label">Nuevo Proyecto</span>
-            <img src="static/images/proj20_new.jpg" alt="Propiedad 3" class="vertical-image" />
-            <div class="city-label">Valencia</div>
-          </div>
-        </a>
+        {% for project in projects %}
+          <a href="{{ url_for('project_detail', project_id=project.id) }}" class="project-card">
+            <div class="project-image">
+              <span class="new-project-label">Nuevo Proyecto</span>
+              <img src="{{ url_for('static', filename='images/' + project.imagen) }}" alt="{{ project.nombre }}" class="vertical-image" />
+              <div class="city-label">{{ project.ciudad }}</div>
+            </div>
+          </a>
+        {% endfor %}
       </div>
     </div>
   </section>

@@ -1,3 +1,5 @@
+/* static/css/style.css */
+
 /* =======================
    RESETEO Y BASE
 ======================= */
@@ -35,22 +37,20 @@ body {
 
 /* =========================
    BOTÓN HAMBURGUESA
-   (arriba a la derecha)
 ========================= */
 .hamburger {
   position: fixed;
   top: 20px;
-  right: 20px;   /* se ubica a la derecha */
+  right: 20px;
   width: 25px;
   height: 18px;
   cursor: pointer;
-  z-index: 9999; /* por encima del slideshow */
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Por defecto, las líneas son BLANCAS */
 .hamburger span {
   display: block;
   width: 100%;
@@ -60,19 +60,18 @@ body {
   transition: 0.4s;
 }
 
-/* Al hacer clic, el checkbox se marca.
-   Queremos que las líneas se pongan NEGRAS */
 #menu-toggle:checked ~ .hamburger span {
   background-color: #000; 
 }
 
-/* Animación para transformarse en "X" */
 #menu-toggle:checked ~ .hamburger span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 #menu-toggle:checked ~ .hamburger span:nth-child(2) {
   opacity: 0;
 }
+
 #menu-toggle:checked ~ .hamburger span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -83,8 +82,8 @@ body {
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px;   /* Oculto a la derecha */
-  left: auto;      /* Anulamos left, ya no lo usamos */
+  right: -250px;
+  left: auto;
   width: 250px;
   height: 100%;
   background-color: #fff;   
@@ -95,16 +94,13 @@ body {
 }
 
 .sidebar-nav {
-  margin-bottom: 0; /* o un valor mínimo si quieres muy poco espacio */
+  margin-bottom: 1.5rem;
 }
 
-
-/* Cuando el checkbox está marcado => sidebar se muestra */
 #menu-toggle:checked ~ .sidebar {
   right: 0;
 }
 
-/* Menú lateral */
 .sidebar-nav ul {
   list-style: none;
   display: flex;
@@ -114,10 +110,9 @@ body {
 }
 
 .sidebar hr {
-  margin-top: 1.5rem;    /* Ajusta a tu gusto */
-  margin-bottom: 1rem;   /* Para separarlo un poco de la sección de idiomas */
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
-
 
 .sidebar-nav ul li a {
   color: #333;
@@ -132,11 +127,6 @@ body {
   background-color: #eee;
 }
 
-.sidebar-languages {
-  margin-top: 1.5rem; /* o 2rem, o el valor que quieras */
-}
-
-/* Estils per al menú d’idiomes dins la sidebar */
 .sidebar-languages ul {
   list-style: none;
   margin-left: 1.5rem;
@@ -153,22 +143,16 @@ body {
   border-radius: 4px;
   transition: background 0.3s ease;
   display: flex;
-  align-items: center; /* per alinear text i imatge */
-  gap: 0.5rem;        /* espai entre la bandereta i el text */
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .sidebar-languages ul li a:hover {
   background-color: #eee;
 }
 
-.sidebar-nav {
-  margin-bottom: 1.5rem;
-}
-
-
 /* =======================
    HERO SECTION
-   -> Slideshow
 ======================= */
 .hero {
   width: 100%;
@@ -203,12 +187,29 @@ body {
   background-image: url("../images/01-1.jpg");
   animation-delay: 0s;
 }
+
 .slide2 {
   background-image: url("../images/07-1.jpg");
   animation-delay: 3s;
 }
+
 .slide3 {
   background-image: url("../images/08-1.jpg");
+  animation-delay: 6s;
+}
+
+.slide1detail1 {
+  background-image: url("../images/01-1-1.jpg");
+  animation-delay: 0s;
+}
+
+.slide1detail2 {
+  background-image: url("../images/old-1.png");
+  animation-delay: 3s;
+}
+
+.slide1detail3 {
+  background-image: url("../images/proj1_new.jpg");
   animation-delay: 6s;
 }
 
@@ -260,6 +261,7 @@ body {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
 .services p {
   margin-bottom: 2rem;
   color: #555;
@@ -281,14 +283,17 @@ body {
   text-align: center;
   box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
+
 .services-cards .card img {
   max-width: 60px;
   margin-bottom: 1rem;
 }
+
 .services-cards .card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
+
 .services-cards .card p {
   font-size: 0.95rem;
   color: #666;
@@ -313,13 +318,12 @@ body {
   text-align: center;
 }
 
-/* Agrega este bloque */
 .projects h2 {
-  margin-bottom: 1.5rem; /* Ajusta el valor a tu gusto */
+  margin-bottom: 1.5rem;
 }
 
 .projects-description {
-  margin-bottom: 2rem; /* Ajusta el valor a tu gusto */
+  margin-bottom: 2rem;
 }
 
 .projects-grid {
@@ -338,13 +342,10 @@ body {
 }
 
 .project-card:hover {
-  /* Un ligero escalado, sin rotaciones */
   transform: scale(1.02);
   box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
-
-/* Mantenemos .project-image con su estilado interno */
 .project-image {
   position: relative;
   overflow: hidden;
@@ -382,6 +383,53 @@ body {
 }
 
 /* =======================
+   PROJECT DETAIL PAGE
+======================= */
+.project-detail {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.project-detail h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.project-main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.project-description {
+  max-width: 800px;
+  text-align: left;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bfc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #005bb0;
+}
+
+/* =======================
    CONTACT SECTION
 ======================= */
 .contact {
@@ -391,11 +439,11 @@ body {
 }
 
 .contact h2 {
-  margin-bottom: 1rem; /* Ajusta el valor a tu gusto */
+  margin-bottom: 1rem;
 }
 
 .contact p {
-  margin-bottom: 2rem; /* Ajusta el valor según quieras */
+  margin-bottom: 2rem;
 }
 
 .contact form {
@@ -403,11 +451,13 @@ body {
   margin: 0 auto;
   text-align: left;
 }
+
 .contact form label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
+
 .contact form input,
 .contact form textarea {
   width: 100%;
@@ -416,6 +466,7 @@ body {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+
 .contact form button {
   padding: 0.7rem 2rem;
   background-color: #007bfc;
@@ -425,6 +476,7 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .contact form button:hover {
   background-color: #005bb0;
 }
@@ -453,14 +505,17 @@ body {
 .footer-col ul {
   list-style: none;
 }
+
 .footer-col ul li {
   margin-bottom: 0.5rem;
 }
+
 .footer-col ul li a {
   text-decoration: none;
   color: #333;
   transition: color 0.3s ease;
 }
+
 .footer-col ul li a:hover {
   color: #007bfc;
 }
@@ -476,14 +531,16 @@ body {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  /* La sidebar ocupa 60% en móvil, ajústalo si gustas */
   .sidebar {
     width: 60%;
   }
-  /* Ajustes a Services y Projects en columna */
   .services-cards,
   .projects-grid {
     flex-direction: column;
     align-items: center;
+  }
+
+  .project-info {
+    flex-direction: column;
   }
 }

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gibert & Triay</title>
   <!-- Vincula tu hoja de estilos -->
-  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
 
@@ -39,25 +39,25 @@
         <!-- Les icones/imatges són només exemples, substitueix-les pels arxius reals -->
         <li>
           <a href="#">
-            <img src="static/images/flag-cat.png" alt="Català" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flag-cat.png') }}" alt="Català" width="20" height="14">
             Català
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="static/images/flag-es.png" alt="Castellano" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flag-es.png') }}" alt="Castellano" width="20" height="14">
             Castellano
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="static/images/flag-uk.png" alt="English" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flag-uk.png') }}" alt="English" width="20" height="14">
             English
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="static/images/flag-fr.png" alt="Français" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flag-fr.png') }}" alt="Français" width="20" height="14">
             Français
           </a>
         </li>
@@ -65,11 +65,34 @@
     </nav>
   </aside>
 
-  <section class="about">
+  <!-- HERO SECTION con slideshow de fondo -->
+  <section class="hero">
+    <div class="slideshow">
+      <div class="slide slide1detail1"></div>
+      <div class="slide slide1detail2"></div>
+      <div class="slide slide1detail3"></div>
+    </div>
+    <div class="overlay">
+      <div class="hero-text">
+        <h1>{{ project.nombre }}</h1>
+      </div>
+    </div>
+  </section>
+  
+  <!-- PROJECT DETAIL SECTION -->
+  <section class="project-detail">
     <div class="container">
-      <h2>Quiénes Somos</h2>
-      <p>Información detallada sobre tu empresa.</p>
-      <!-- Agrega más contenido según necesites -->
+      <h2>{{ project.nombre }}</h2>
+      <div class="project-info">
+        <img src="{{ url_for('static', filename='images/' + project.imagen) }}" alt="{{ project.nombre }}" class="project-main-image" />
+        <div class="project-description">
+          <p><strong>Ciudad:</strong> {{ project.ciudad }}</p>
+          <p><strong>Calle:</strong> {{ project.calle }}</p>
+          <p>{{ project.descripcion }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+      </div>
+      <a href="{{ url_for('home') }}" class="back-button">← Volver a Proyectos</a>
     </div>
   </section>
 
