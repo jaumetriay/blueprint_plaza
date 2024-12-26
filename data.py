@@ -13,7 +13,7 @@ projects = [
         ],
         'descripcion': 'Descripción detallada del Proyecto Barcelona.',
         'calle': 'Calle Example 1',
-        'precio': '30.000',
+        'precio': '300.000',
         # Puedes agregar más campos según necesites
     },
     {
