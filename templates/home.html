@@ -1,54 +1,187 @@
-<!--
-This HTML template represents the home page of the Ad Display application.
-It displays a list of ads with clickable links to individual ad pages.
-The template uses Jinja2 templating syntax for dynamic content rendering.
-
-Key features:
-- Responsive design with viewport meta tag
-- External CSS stylesheet linked
-- Dynamic rendering of ad list using Jinja2 for loop
-- Links to individual ad pages using Flask's url_for function
--->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Display Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gibert & Triay</title>
+  <!-- Vincula tu hoja de estilos -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Gibert & Triay </div>
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h1>Gibert & Triay</h1>
-        <p class="intro">Discover the most exclusive investing oportunities from our collection.</p>
+  <!-- 1) Checkbox oculto para controlar la barra lateral -->
+  <input type="checkbox" id="menu-toggle" />
 
-        <section class="ad-list">
-            {% for ad in ads %}
-                <div class="ad-item">
-                    <a href="{{ url_for('get_ad', ad_id=ad.id) }}">
-                        <h2>{{ ad.title }}</h2>
-                        <p class="ad-description">{{ ad.description[:100] }}...</p>
-                        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                </div>
-            {% endfor %}
-        </section>
-    </main>
+  <!-- 2) Botón hamburguesa (3 líneas) -->
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
-    <footer>
-        <p>&copy; 2024 Gibert & Triay. All rights reserved.</p>
-    </footer>
+  <!-- 3) SIDEBAR oculta; se despliega al marcar #menu-toggle -->
+  <aside class="sidebar">
+    <!-- Menú lateral con tus enlaces -->
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Separador visual opcional -->
+    <hr />
+
+    <!-- MENÚ D'IDIOMES -->
+    <nav class="sidebar-languages">
+      <ul>
+        <!-- Les icones/imatges són només exemples, substitueix-les pels arxius reals -->
+        <li>
+          <a href="#">
+            <img src="static/images/flag-cat.png" alt="Català" width="20" height="14">
+            Català
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-es.png" alt="Castellano" width="20" height="14">
+            Castellano
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-uk.png" alt="English" width="20" height="14">
+            English
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-fr.png" alt="Français" width="20" height="14">
+            Français
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- HERO SECTION con slideshow de fondo -->
+  <section class="hero">
+    <div class="slideshow">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+    </div>
+    <div class="overlay">
+      <div class="hero-text">
+        <!-- Logo centrado en el Hero (opcional) -->
+        <img src="static/images/logo.png" alt="Tu Logo" class="logo-hero" />
+        <h1>Donem servei professional al teu immoble</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <p>Lo que ofrecemos para impulsar tu crecimiento financiero</p>
+      <div class="services-cards">
+        <div class="card">
+          <img src="static/images/icon1.png" alt="Icono Asesoría" />
+          <h3>Asesoría Personalizada</h3>
+          <p>Planea tu estrategia de inversión con expertos certificados.</p>
+        </div>
+        <div class="card">
+          <img src="static/images/icon2.png" alt="Icono Gestión" />
+          <h3>Gestión de Portafolios</h3>
+          <p>Diversificamos y optimizamos tu portafolio con seguridad y transparencia.</p>
+        </div>
+        <div class="card">
+          <img src="static/images/icon3.png" alt="Icono Research" />
+          <h3>Investigación & Análisis</h3>
+          <p>Te mantenemos informado con estudios de mercado y tendencias mundiales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LÍNEA DIVISORIA -->
+  <hr class="section-divider" />
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2>Proyectos Recientes</h2>
+      <p class="projects-description">
+        Echa un vistazo a algunos de nuestros proyectos recientes.
+      </p>
+
+      <div class="projects-grid">
+        {% for project in projects %}
+          <a href="{{ url_for('project_detail', project_id=project.id) }}" class="project-card">
+            <div class="project-image">
+              <span class="new-project-label">Nuevo Proyecto</span>
+              <img src="{{ url_for('static', filename='images/' + project.imagen) }}" alt="{{ project.nombre }}" class="vertical-image" />
+              <div class="city-label">{{ project.ciudad }}</div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <p>Completa el siguiente formulario y nos pondremos en contacto contigo.</p>
+      <form>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="#about">Quiénes Somos</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Trabaja con Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Políticas de Privacidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contáctanos</h3>
+        <p>Dirección: Girona</p>
+        <p>Tel: +34 616 26 53 07</p>
+        <p>Email: info@giberttriay.com</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2024 Gibert & Triay - Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
 </body>
 </html>

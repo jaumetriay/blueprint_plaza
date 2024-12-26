@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gibert & Triay</title>
+  <!-- Vincula tu hoja de estilos -->
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+
+  <!-- 1) Checkbox oculto para controlar la barra lateral -->
+  <input type="checkbox" id="menu-toggle" />
+
+  <!-- 2) Botón hamburguesa (3 líneas) -->
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <!-- 3) SIDEBAR oculta; se despliega al marcar #menu-toggle -->
+  <aside class="sidebar">
+    <!-- Menú lateral con tus enlaces -->
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Separador visual opcional -->
+    <hr />
+
+    <!-- MENÚ D'IDIOMES -->
+    <nav class="sidebar-languages">
+      <ul>
+        <!-- Les icones/imatges són només exemples, substitueix-les pels arxius reals -->
+        <li>
+          <a href="#">
+            <img src="static/images/flag-cat.png" alt="Català" width="20" height="14">
+            Català
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-es.png" alt="Castellano" width="20" height="14">
+            Castellano
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-uk.png" alt="English" width="20" height="14">
+            English
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="static/images/flag-fr.png" alt="Français" width="20" height="14">
+            Français
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <section class="about">
+    <div class="container">
+      <h2>Quiénes Somos</h2>
+      <p>Información detallada sobre tu empresa.</p>
+      <!-- Agrega más contenido según necesites -->
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="#about">Quiénes Somos</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Trabaja con Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Políticas de Privacidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contáctanos</h3>
+        <p>Dirección: Girona</p>
+        <p>Tel: +34 616 26 53 07</p>
+        <p>Email: info@giberttriay.com</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2024 Gibert & Triay - Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
