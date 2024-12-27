@@ -8,10 +8,10 @@ projects = [
         'imagen': 'proj1_new.jpg',  # Imagen principal
         'imagenes': [
             'proj1_new.jpg',        # Imagen principal
-            'old-1.png',          # Imagen adicional 1
+            'proj1_old.png',          # Imagen adicional 1
             'proj2_new.jpg'           # Imagen adicional 2
         ],
-        'descripcion': 'Descripción detallada del Proyecto Barcelona.',
+        'descripcion': 'Desbripción detallada del Proyecto Barcelona.',
         'calle': 'Calle Example 1',
         'precio': '30.000',
         # Puedes agregar más campos según necesites
@@ -22,7 +22,7 @@ projects = [
         'ciudad': 'Madrid',
         'imagen': 'new-1.png',
         'imagenes': [
-            '01-1-1.jpg',
+            'proj2_new_alt.jpg',
             'proj2_new.jpg',
             'proj10_new.jpg'
         ],
@@ -37,8 +37,8 @@ projects = [
         'imagen': 'proj20_new.jpg',
         'imagenes': [
             'proj20_new.jpg',
-            'proj11_1.jpg',
-            'old-4.png'
+            'proj11_new.jpg',
+            'proj3_old.png'
         ],
         'descripcion': 'Descripción detallada del Proyecto Valencia.',
         'calle': 'Calle Example 3',

@@ -10,8 +10,7 @@ Returns:
     dict: A dictionary containing the advertisement data loaded from the JSON file.
 """
 def load_ads():
-    json_path = "static/json/ads.json"
-    print(json_path)
+    json_path = "static/json/data.json"
     with open(json_path, 'r') as f:
         return json.load(f)
 
