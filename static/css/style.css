@@ -274,6 +274,13 @@ body {
   justify-content: center;
 }
 
+.services .card i {
+  color: #0d2b07; /* Color de l'icona */
+  margin-bottom: 20px; /* Incrementa l'espai a 20px */
+  display: block; /* Assegura que l'icona ocupi una línia completa */
+}
+
+
 .services-cards .card {
   flex: 1 1 250px;
   max-width: 300px;
@@ -418,15 +425,16 @@ body {
   display: inline-block;
   margin-top: 2rem;
   padding: 0.5rem 1rem;
-  background-color: #007bfc;
-  color: #fff;
+  background-color: #2f2f2f;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 4px;
   transition: background 0.3s ease;
 }
 
 .back-button:hover {
-  background-color: #005bb0;
+  background-color: #0d2b07;
+  color:#ffffff;
 }
 
 /* =======================
@@ -469,8 +477,8 @@ body {
 
 .contact form button {
   padding: 0.7rem 2rem;
-  background-color: #007bfc;
-  color: #fff;
+  background-color: #2f2f2f;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -478,7 +486,8 @@ body {
 }
 
 .contact form button:hover {
-  background-color: #005bb0;
+  background-color: #0d2b07;
+  color:#ffffff;
 }
 
 /* =======================
@@ -517,7 +526,7 @@ body {
 }
 
 .footer-col ul li a:hover {
-  color: #007bfc;
+  color: #0d2b07;
 }
 
 .footer-copy {
