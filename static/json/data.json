@@ -1,6 +1,6 @@
 [
     {
-        "id": "proyecto1",
+        "id": 1,
         "nombre": "Proyecto Barcelona",
         "ciudad": "Barcelona",
         "imagen": "proj1_new.jpg",
@@ -14,7 +14,7 @@
         "precio": "30.000"
     },
     {
-        "id": "proyecto2",
+        "id": 2,
         "nombre": "Proyecto Madrid",
         "ciudad": "Madrid",
         "imagen": "new-1.png",
@@ -28,7 +28,7 @@
         "precio": "50.000"
     },
     {
-        "id": "proyecto3",
+        "id": 3,
         "nombre": "Proyecto Valencia",
         "ciudad": "Valencia",
         "imagen": "proj20_new.jpg",
