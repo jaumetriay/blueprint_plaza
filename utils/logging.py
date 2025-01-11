@@ -1,6 +1,3 @@
-
-from functools import wraps
-from flask import current_app, request
 """
 Decorator function to log route access.
 
@@ -15,6 +12,10 @@ Usage:
 Returns:
     function: The decorated function.
 """
+
+from functools import wraps
+from flask import current_app, request
+
 def log_route_access(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):

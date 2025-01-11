@@ -1,6 +1,3 @@
-from flask import Flask
-from flask_caching import Cache
-from routes import init_routes
 """
 This module initializes the Flask application and sets up caching.
 
@@ -9,6 +6,10 @@ and runs the app in debug mode if executed as the main script.
 
 The app uses blueprint_plaza.routes for routing configuration.
 """
+
+from flask import Flask
+from flask_caching import Cache
+from routes import init_routes
 
 app = Flask(__name__)
 app.config['PREFERRED_URL_SCHEME'] = 'https'

@@ -18,7 +18,7 @@ It also implements caching for loading ads to improve performance.
 
 def init_routes(app, cache):
     @app.errorhandler(404)
-    def page_not_found(e):
+    def page_not_found():
         return render_template('404.html'), 404
 
     @app.route('/', strict_slashes=False)
@@ -45,5 +45,4 @@ def init_routes(app, cache):
         if ad:
             project = ad
             return render_template('project_detail.html', project=project)
-        else:
-            return abort(404)
+        return abort(404)
