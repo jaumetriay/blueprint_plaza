@@ -10,6 +10,7 @@ The app uses blueprint_plaza.routes for routing configuration.
 from flask import Flask
 from flask_caching import Cache
 from routes import init_routes
+import os
 
 app = Flask(__name__)
 app.config['PREFERRED_URL_SCHEME'] = 'https'
