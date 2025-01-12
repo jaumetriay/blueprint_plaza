@@ -1,6 +1,4 @@
-from flask import render_template, redirect, url_for, abort
-from utils.read_json import load_ads
-
+# pylint: disable=C0116
 """
 Initialize routes for the Flask application.
 
@@ -15,6 +13,12 @@ It also implements caching for loading ads to improve performance.
 :param app: Flask application instance
 :param cache: Cache object for caching expensive operations
 """
+
+from flask import render_template, redirect, url_for, abort
+# pylint: disable=import-error
+from utils.read_json import load_ads
+
+
 
 def init_routes(app, cache):
     @app.errorhandler(404)

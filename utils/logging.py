@@ -12,6 +12,7 @@ Usage:
 Returns:
     function: The decorated function.
 """
+# pylint: disable=missing-function-docstring
 
 from functools import wraps
 from flask import current_app, request

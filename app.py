@@ -6,7 +6,7 @@ and runs the app in debug mode if executed as the main script.
 
 The app uses blueprint_plaza.routes for routing configuration.
 """
-
+# pylint: disable=import-error
 from flask import Flask
 from flask_caching import Cache
 from routes import init_routes

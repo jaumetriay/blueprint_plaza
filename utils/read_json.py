@@ -7,6 +7,7 @@ of the project and returns its contents as a Python object.
 Returns:
     dict: A dictionary containing the advertisement data loaded from the JSON file.
 """
+# pylint: disable=missing-function-docstring
 
 import json
 
