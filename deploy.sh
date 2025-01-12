@@ -77,7 +77,7 @@ echo '</pre></div>' >> security_report.html
 
 update_progress "Running Bandit security checks..."
 echo '<div class="section"><h2>2. Bandit Security Vulnerabilities</h2><pre>' >> security_report.html
-bandit -r ./blueprint_plaza -ll --exclude '/venv/,/static/,/templates/' >> security_report.html 2>&1
+bandit -r . -ll --exclude '/venv/,/static/,/templates/' >> security_report.html 2>&1
 echo '</pre></div>' >> security_report.html
 
 update_progress "Running Safety checks..."

@@ -17,5 +17,6 @@ cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 init_routes(app, cache)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4300)
+    port = int(os.environ.get('PORT', 4300))
+    app.run(host='0.0.0.0', port=port)
     # app.run(debug=True)
