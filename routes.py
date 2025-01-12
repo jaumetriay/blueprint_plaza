@@ -14,10 +14,10 @@ It also implements caching for loading ads to improve performance.
 :param cache: Cache object for caching expensive operations
 """
 
-from flask import render_template, redirect, url_for, abort
+from flask import render_template, redirect, url_for, abort, request, session, g
 # pylint: disable=import-error
 from utils.read_json import load_ads
-
+from data import projects
 
 
 def init_routes(app, cache):
@@ -46,7 +46,21 @@ def init_routes(app, cache):
     def project_detail(project_id):
         ads = cached_load_ads()
         ad = next((ad for ad in ads if ad['id'] == project_id), None)
-        if ad:
-            project = ad
-            return render_template('project_detail.html', project=project)
-        return abort(404)
+        
+        if ad is None:
+            abort(404)
+        
+        address = f"{ad['calle']}, {ad['ciudad']}"
+        map_url = f"https://maps.google.com/maps?q={address.replace(' ', '+')}&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        ad['map_url'] = map_url
+
+        project = ad
+        return render_template('project_detail.html', project=project)
+
+        
+    @app.route('/change_language/<language>')
+    def change_language(language):
+        if language not in app.config['SUPPORTED_LANGUAGES']:
+            language = 'ca'  # Idioma por defecto si el seleccionado no está soportado
+        session['lang'] = language
+        return redirect(request.referrer or url_for('home'))

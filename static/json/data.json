@@ -1,44 +1,74 @@
 [
     {
         "id": 1,
-        "nombre": "Proyecto Barcelona",
-        "ciudad": "Barcelona",
-        "imagen": "proj1_new.jpg",
-        "imagenes": [
+        "nombre": {
+            "ca": "Projecte Barcelona",
+            "es": "Proyecto Barcelona",
+            "en": "Barcelona Project",
+            "fr": "Projet Barcelone"
+          },
+          "ciudad": "Barcelona",
+          "imagen": "proj1_new.jpg",
+          "imagenes": [
             "proj1_new.jpg",
-            "proj1_old.png",
+            "old-1.png",
             "proj2_new.jpg"
-        ],
-        "descripcion": "Desbripción detallada del Proyecto Barcelona.",
-        "calle": "Calle Example 1",
-        "precio": "30.000"
+          ],
+          "descripcion": {
+            "ca": "Descripció detallada del Projecte Barcelona.",
+            "es": "Descripción detallada del Proyecto Barcelona.",
+            "en": "Detailed description of the Barcelona Project.",
+            "fr": "Description détaillée du Projet Barcelone."
+          },
+          "calle": "Calle Example 1",
+          "precio": "30.000"
     },
     {
         "id": 2,
-        "nombre": "Proyecto Madrid",
-        "ciudad": "Madrid",
-        "imagen": "new-1.png",
-        "imagenes": [
-            "proj2_new_alt.jpg",
+        "nombre": {
+            "ca": "Projecte Madrid",
+            "es": "Proyecto Madrid",
+            "en": "Madrid Project",
+            "fr": "Projet Madrid"
+          },
+          "ciudad": "Madrid",
+          "imagen": "new-1.png",
+          "imagenes": [
+            "01-1-1.jpg",
             "proj2_new.jpg",
             "proj10_new.jpg"
-        ],
-        "descripcion": "Descripción detallada del Proyecto Madrid.",
-        "calle": "Calle Example 2",
-        "precio": "50.000"
+          ],
+          "descripcion": {
+            "ca": "Descripció detallada del Projecte Madrid.",
+            "es": "Descripción detallada del Proyecto Madrid.",
+            "en": "Detailed description of the Madrid Project.",
+            "fr": "Description détaillée du Projet Madrid."
+          },
+          "calle": "Calle Example 2",
+          "precio": "50.000"
     },
     {
         "id": 3,
-        "nombre": "Proyecto Valencia",
-        "ciudad": "Valencia",
-        "imagen": "proj20_new.jpg",
-        "imagenes": [
+        "nombre": {
+            "ca": "Projecte Valencia",
+            "es": "Proyecto Valencia",
+            "en": "Valencia Project",
+            "fr": "Projet Valencia"
+          },
+          "ciudad": "Valencia",
+          "imagen": "proj20_new.jpg",
+          "imagenes": [
             "proj20_new.jpg",
-            "proj11_new.jpg",
-            "proj3_old.png"
-        ],
-        "descripcion": "Descripción detallada del Proyecto Valencia.",
-        "calle": "Calle Example 3",
-        "precio": "25.000"
+            "proj11_1.jpg",
+            "old-4.png"
+          ],
+          "descripcion": {
+            "ca": "Descripció detallada del Projecte Valencia.",
+            "es": "Descripción detallada del Proyecto Valencia.",
+            "en": "Detailed description of the Valencia Project.",
+            "fr": "Description détaillée du Projet Valencia."
+          },
+          "calle": "Calle Example 3",
+          "precio": "25.000"
     }
 ]
