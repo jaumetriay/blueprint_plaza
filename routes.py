@@ -17,8 +17,6 @@ It also implements caching for loading ads to improve performance.
 from flask import render_template, redirect, url_for, abort, request, session, g
 # pylint: disable=import-error
 from utils.read_json import load_ads
-from data import projects
-
 
 def init_routes(app, cache):
     @app.errorhandler(404)
