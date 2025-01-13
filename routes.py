@@ -18,9 +18,11 @@ from flask import render_template, redirect, url_for, abort, request, session, g
 # pylint: disable=import-error
 from utils.read_json import load_ads
 
+
+# pylint: disable=W0613
 def init_routes(app, cache):
     @app.errorhandler(404)
-    def page_not_found():
+    def page_not_found(error):
         return render_template('404.html'), 404
 
     @app.route('/', strict_slashes=False)
@@ -44,10 +46,10 @@ def init_routes(app, cache):
     def project_detail(project_id):
         ads = cached_load_ads()
         ad = next((ad for ad in ads if ad['id'] == project_id), None)
-        
+
         if ad is None:
             abort(404)
-        
+
         address = f"{ad['calle']}, {ad['ciudad']}"
         map_url = f"https://maps.google.com/maps?q={address.replace(' ', '+')}&t=&z=15&ie=UTF8&iwloc=&output=embed"
         ad['map_url'] = map_url
@@ -55,7 +57,7 @@ def init_routes(app, cache):
         project = ad
         return render_template('project_detail.html', project=project)
 
-        
+
     @app.route('/change_language/<language>')
     def change_language(language):
         if language not in app.config['SUPPORTED_LANGUAGES']:

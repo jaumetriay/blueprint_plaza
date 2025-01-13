@@ -7,6 +7,7 @@ and runs the app in debug mode if executed as the main script.
 The app uses blueprint_plaza.routes for routing configuration.
 """
 # pylint: disable=import-error
+import os
 from flask import Flask, request, session, g
 from flask_caching import Cache
 from routes import init_routes
@@ -17,8 +18,14 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))  # Clave secreta segura
 app.config['PREFERRED_URL_SCHEME'] = 'https'
 app.config['SUPPORTED_LANGUAGES'] = ['ca', 'es', 'en', 'fr']
-
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+cache = Cache(config={
+    'CACHE_TYPE': 'redis',
+    'CACHE_KEY_PREFIX': 'blueprint_plaza',
+    'CACHE_REDIS_HOST': 'localhost',  # Add host
+    'CACHE_REDIS_PORT': 6379,         # Add port
+    'CACHE_DEFAULT_TIMEOUT': 300      # Add timeout
+})
+cache.init_app(app)
 init_routes(app, cache)
 
 def load_translations():
@@ -45,7 +52,7 @@ def inject_translations():
     def _(text):
         return g.translations.get(text, text)
     return {'_': _}
-    
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 4300))
     app.run(host='0.0.0.0', port=port)
