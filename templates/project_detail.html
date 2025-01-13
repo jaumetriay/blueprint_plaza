@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ g.lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -36,33 +38,33 @@
     <!-- MENÚ D'IDIOMES -->
     <nav class="sidebar-languages">
       <ul>
-        <!-- Les icones/imatges són només exemples, substitueix-les pels arxius reals -->
         <li>
-          <a href="#">
+          <a href="{{ url_for('change_language', language='ca') }}">
             <img src="{{ url_for('static', filename='images/flag-cat.png') }}" alt="Català" width="20" height="14">
             Català
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url_for('change_language', language='es') }}">
             <img src="{{ url_for('static', filename='images/flag-es.png') }}" alt="Castellano" width="20" height="14">
             Castellano
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url_for('change_language', language='en') }}">
             <img src="{{ url_for('static', filename='images/flag-uk.png') }}" alt="English" width="20" height="14">
             English
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ url_for('change_language', language='fr') }}">
             <img src="{{ url_for('static', filename='images/flag-fr.png') }}" alt="Français" width="20" height="14">
             Français
           </a>
         </li>
       </ul>
     </nav>
+
   </aside>
 
   <!-- HERO SECTION con slideshow de fondo -->
@@ -74,7 +76,7 @@
     </div>
     <div class="overlay">
       <div class="hero-text">
-        <h1>{{ project.nombre }}</h1>
+        <h1>{{ project.nombre[g.lang] }}</h1>
       </div>
     </div>
   </section>
@@ -82,23 +84,23 @@
   <!-- PROJECT DETAIL SECTION -->
   <section class="project-detail">
     <div class="container">
-      <h2>{{ project.nombre }}</h2>
+      <h2>{{ project.nombre[g.lang] }}</h2>
       
       <!-- Pestañas de navegación -->
       <div class="tabs">
-        <button class="tab-button active" data-tab="descripcion">Descripción</button>
-        <button class="tab-button" data-tab="fotos">Fotos</button>
-        <button class="tab-button" data-tab="mapa">Mapa</button>
-        <button class="tab-button" data-tab="precios">Precios</button>
+        <button class="tab-button active" data-tab="descripcion">{{ _('Descripció') }}</button>
+        <button class="tab-button" data-tab="fotos">{{ _('Fotos') }}</button>
+        <button class="tab-button" data-tab="mapa">{{ _('Mapa') }}</button>
+        <button class="tab-button" data-tab="precios">{{ _('Preus') }}</button>
       </div>
       
       <!-- Contenedores de contenido de pestañas -->
       <div class="tab-content active" id="descripcion">
         <div class="project-info">
           <div class="project-description">
-            <p><strong>Ciudad:</strong> {{ project.ciudad }}</p>
-            <p><strong>Calle:</strong> {{ project.calle }}</p>
-            <p>{{ project.descripcion }}</p>
+            <p><strong>{{ _('Ciutat') }}:</strong> {{ project.ciudad }}</p>
+            <p><strong>{{ _('Carrer') }}:</strong> {{ project.calle }}</p>
+            <p>{{ project.descripcion[g.lang] }}</p>
             <!-- Agrega más detalles según necesites -->
           </div>
         </div>
@@ -122,56 +124,54 @@
             scrolling="no" 
             marginheight="0" 
             marginwidth="0" 
-            src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=es&amp;q=Calle%20Example%201,Barcelona&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            src="{{ project.map_url }}">
           </iframe>
 
-          <a href='https://embedmap.org/'>google map html embed</a>
-          <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=e5691aec696b33359b7c5cc4d5e1eb1f83f29f21'></script>
+          <!-- <a href='https://embedmap.org/'>google map html embed</a>
+          <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=e5691aec696b33359b7c5cc4d5e1eb1f83f29f21'></script> -->
         </div>
       </div>
       
       <div class="tab-content" id="precios">
         <div class="pricing">
           <!-- Ejemplo de precios, ajusta según tus datos -->
-          <p><strong>Precio:</strong> {{ project.precio }} €</p>
+          <p><strong>{{ _('Preu:') }}</strong> {{ project.precio }} €</p>
           <!-- Agrega más detalles de precios según necesites -->
         </div>
       </div>
       
-      <a href="{{ url_for('home') }}" class="back-button">← Volver a Proyectos</a>
+      <a href="{{ url_for('home') }}" class="back-button">← {{ _('Tornar') }}</a>
     </div>
   </section>
-
-
 
   <!-- FOOTER -->
   <footer class="main-footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <h3>Empresa</h3>
+        <h3>{{ _('Empresa') }}</h3>
         <ul>
-          <li><a href="#about">Quiénes Somos</a></li>
+          <li><a href="#about">{{ _('Qui Som') }}</a></li>
           <li><a href="#">Blog</a></li>
-          <li><a href="#">Trabaja con Nosotros</a></li>
+          <li><a href="#">{{ _('Treballa amb Nosotres') }}</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Recursos</h3>
+        <h3>{{ _('Recursos') }}</h3>
         <ul>
-          <li><a href="#">Preguntas Frecuentes</a></li>
-          <li><a href="#">Políticas de Privacidad</a></li>
-          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">{{ _('Preguntes Freqüents') }}</a></li>
+          <li><a href="#">{{ _('Polítiques de Privadesa') }}</a></li>
+          <li><a href="#">{{ _('Termes i Condicions') }}</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Contáctanos</h3>
-        <p>Dirección: Girona</p>
+        <h3>{{ _("Contacta'ns") }}</h3>
+        <p>{{ _('Direcció:') }} Girona</p>
         <p>Tel: +34 616 26 53 07</p>
         <p>Email: info@giberttriay.com</p>
       </div>
     </div>
     <div class="footer-copy">
-      <p>&copy; 2024 Gibert & Triay - Todos los derechos reservados.</p>
+      <p>&copy; 2024 Gibert & Triay - {{ _('Tots els drets reservats.') }}</p>
     </div>
   </footer>
   
