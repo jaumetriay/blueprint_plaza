@@ -1,6 +1,6 @@
-import pytest
-from flask import url_for
 
+# pylint: disable=C0116
+"""Test module for Blueprint Plaza routes."""
 
 def test_404_error(client):
     response = client.get('/nonexistent-route')
@@ -37,7 +37,7 @@ def test_get_nonexistent_ad(client, mocker):
     assert response.status_code == 404
 
 
-def test_cached_load_ads(app, cache, mocker):
+def test_cached_load_ads(app, mocker):
     with app.test_request_context():
         mock_load_ads = mocker.patch('utils.read_json.load_ads')
         mock_load_ads.return_value = [{'id': 1, 'title': 'Test Ad'}]

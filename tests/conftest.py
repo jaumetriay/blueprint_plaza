@@ -1,7 +1,12 @@
+# pylint: disable=C0116
+# pylint: disable=W0621
+# pylint: disable=import-error
+"""Test module for Blueprint Plaza routes."""
 import pytest
+from flask_caching import Cache
 from ..app import app as flask_app
 
-from flask_caching import Cache
+
 
 @pytest.fixture
 def app():
