@@ -1,112 +1,114 @@
-
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ g.lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gibert & Triay</title>
-  <!-- Vincula tu hoja de estilos -->
-  <link rel="stylesheet" href="static/css/style.css" />
+  <title>Qui Som? - Gibert & Triay</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png" />
 </head>
 <body>
-
-  <!-- 1) Checkbox oculto para controlar la barra lateral -->
+  <!-- Botó hamburguesa i Sidebar -->
   <input type="checkbox" id="menu-toggle" />
-
-  <!-- 2) Botón hamburguesa (3 líneas) -->
   <label for="menu-toggle" class="hamburger">
     <span></span>
     <span></span>
     <span></span>
   </label>
-
-  <!-- 3) SIDEBAR oculta; se despliega al marcar #menu-toggle -->
   <aside class="sidebar">
-    <!-- Menú lateral con tus enlaces -->
     <nav class="sidebar-nav">
       <ul>
         <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('about') }}">Qui Som</a></li>
         <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- Separador visual opcional -->
-    <hr />
-
-    <!-- MENÚ D'IDIOMES -->
-    <nav class="sidebar-languages">
-      <ul>
-        <!-- Les icones/imatges són només exemples, substitueix-les pels arxius reals -->
-        <li>
-          <a href="#">
-            <img src="static/images/flag-cat.png" alt="Català" width="20" height="14">
-            Català
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="static/images/flag-es.png" alt="Castellano" width="20" height="14">
-            Castellano
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="static/images/flag-uk.png" alt="English" width="20" height="14">
-            English
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="static/images/flag-fr.png" alt="Français" width="20" height="14">
-            Français
-          </a>
-        </li>
       </ul>
     </nav>
   </aside>
 
-  <section class="about">
-    <div class="container">
-      <h2>Quiénes Somos</h2>
-      <p>Información detallada sobre tu empresa.</p>
-      <!-- Agrega más contenido según necesites -->
+  <!-- Hero amb imatges de fons però més petit -->
+  <section class="hero hero-about">
+    <div class="slideshow">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+    </div>
+    <div class="overlay">
+      <div class="hero-text">
+        <h1>{{ _('Qui Som?') }}</h1>
+      </div>
     </div>
   </section>
 
+  <!-- Text explicatiu centrat -->
+  <section class="about-us">
+    <div class="container">
+      <h2>{{ _('Descobreix la nostra història i els nostres valors') }}</h2>
+      <p>{{ _('Som una empresa dedicada a oferir serveis immobiliaris professionals, amb un enfocament en la qualitat i l’atenció personalitzada. La nostra experiència i compromís ens permeten aportar solucions adaptades a les necessitats dels nostres clients.') }}</p>
+    </div>
+  </section>
+
+  <!-- Fotos dels socis amb peu de foto -->
+  <section class="team">
+    <div class="container">
+      <div class="team-members">
+        <div class="member">
+          <div class="photo-wrapper">
+            <img src="{{ url_for('static', filename='images/soci1.jpg') }}" alt="Nom Soci 1" class="member-photo">
+            <div class="photo-caption">
+              <p><strong>Dídac Gibert</strong></p>
+              <p>{{ _('CEO & Fundador') }}</p>
+              <a href="https://www.linkedin.com/in/soci1" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="member">
+          <div class="photo-wrapper">
+            <img src="{{ url_for('static', filename='images/soci2.jpeg') }}" alt="Nom Soci 2" class="member-photo">
+            <div class="photo-caption">
+              <p><strong>Jaume Triay</strong></p>
+              <p>{{ _('CTO & Fundador') }}</p>
+              <a href="https://www.linkedin.com/in/soci2" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="main-footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <h3>Empresa</h3>
+        <h3>{{ _('Empresa') }}</h3>
         <ul>
-          <li><a href="#about">Quiénes Somos</a></li>
+          <li><a href="#about">{{ _('Qui Som') }}</a></li>
           <li><a href="#">Blog</a></li>
-          <li><a href="#">Trabaja con Nosotros</a></li>
+          <li><a href="#">{{ _('Treballa amb Nosotres') }}</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Recursos</h3>
+        <h3>{{ _('Recursos') }}</h3>
         <ul>
-          <li><a href="#">Preguntas Frecuentes</a></li>
-          <li><a href="#">Políticas de Privacidad</a></li>
-          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">{{ _('Preguntes Freqüents') }}</a></li>
+          <li><a href="#">{{ _('Polítiques de Privadesa') }}</a></li>
+          <li><a href="#">{{ _('Termes i Condicions') }}</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Contáctanos</h3>
-        <p>Dirección: Girona</p>
+        <h3>{{ _("Contacta'ns") }}</h3>
+        <p>{{ _('Direcció:') }} Girona</p>
         <p>Tel: +34 616 26 53 07</p>
         <p>Email: info@giberttriay.com</p>
       </div>
     </div>
     <div class="footer-copy">
-      <p>&copy; 2024 Gibert & Triay - Todos los derechos reservados.</p>
+      <p>&copy; 2024 Gibert & Triay - {{ _('Tots els drets reservats.') }}</p>
     </div>
   </footer>
-  
 </body>
 </html>
