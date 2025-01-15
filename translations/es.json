@@ -21,6 +21,7 @@
     "Enviar Missatge" : "Enviar Mensaje",
     "Empresa" : "Empresa",
     "Qui Som" : "Quiénes Somos",
+    "Qui Som?" : "¿Quiénes Somos?",
     "Treballa amb Nosotres" : "Trabaja con Nosotros",
     "Recursos" : "Recursos",
     "Preguntes Freqüents" : "Preguntas Frecuentes",
@@ -35,5 +36,9 @@
     "Ciutat": "Ciudad",
     "Carrer": "Calle",
     "Preu": "Precio",
-    "Tornar": "Volver"
+    "Tornar": "Volver",
+    "Som en <strong>Jaume Triay</strong> i en <strong>Dídac Gibert</strong>, fundadors de <strong>Gibert & Triay</strong> i ara socis amb un objectiu clar: ajudar els propietaris d'immobles a treure el màxim profit de les seves propietats. Oferim solucions per aquells que volen invertir personalment en la reforma però no saben per on començar, amb qui parlar o no tenen temps. A més, per a aquells que no disposen dels recursos per finançar la reforma o no volen invertir-hi, oferim la possibilitat que un inversor cobreixi el cost de la reforma; en aquest cas, tot i que l'inversor obtindrà un benefici, el propietari del immoble rebrà el 45% del valor net de la inversió. Per aconseguir-ho, hem establert una col·laboració estratègica amb <strong>Vibbum</strong>, una empresa líder en interiorisme especialitzada en reformes integrals d'estil únic i modern. També comptem amb el suport de <strong>Propietats.cat</strong>, una immobiliària amb més de 30 anys d'experiència, que ens proporciona l'expertesa necessària per a la taxació, valoració i venda dels immobles reformats." : "Somos <strong>Jaume Triay</strong> y <strong>Dídac Gibert</strong>, fundadores de <strong>Gibert & Triay</strong> y ahora socios con un objetivo claro: ayudar a los propietarios de inmuebles a sacar el máximo provecho de sus propiedades. Ofrecemos soluciones para aquellos que quieren invertir personalmente en la reforma pero no saben por dónde empezar, con quién hablar o no tienen tiempo. Además, para quienes no disponen de los recursos para financiar la reforma o no quieren invertir en ella, ofrecemos la posibilidad de que un inversor cubra el costo de la reforma; en este caso, aunque el inversor obtendrá un beneficio, el propietario del inmueble recibirá el 45% del valor neto de la inversión. Para lograrlo, hemos establecido una colaboración estratégica con <strong>Vibbum</strong>, una empresa líder en interiorismo especializada en reformas integrales de estilo único y moderno. También contamos con el apoyo de <strong>Propietats.cat</strong>, una inmobiliaria con más de 30 años de experiencia, que nos proporciona la experiencia necesaria para la tasación, valoración y venta de los inmuebles reformados.",
+    "Si ja vens a través d'una altra immobiliària, tot el procés de venda, valoració del preu i taxació es farà amb el teu agent de confiança. Així, podem assegurar-nos que tots els nostres clients rebin el millor servei possible, tant si venen per si sols com a través d'una immobiliària." : "Si ya vienes a través de otra inmobiliaria, todo el proceso de venta, valoración del precio y tasación se realizará con tu agente de confianza. De este modo, podemos asegurarnos de que todos nuestros clientes reciban el mejor servicio posible, ya sea que vendan por su cuenta o a través de una inmobiliaria.",
+    "Amb aquesta aliança, oferim una solució completa i confiable que abasta des de la planificació de la reforma fins a la venda de la propietat, garantint així una experiència sense preocupacions per als nostres clients." : "Con esta alianza, ofrecemos una solución completa y confiable que abarca desde la planificación de la reforma hasta la venta de la propiedad, garantizando así una experiencia sin preocupaciones para nuestros clientes.",
+    "Fundador" : "Fundador"
 }

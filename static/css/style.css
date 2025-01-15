@@ -699,7 +699,9 @@ body {
   max-width: 800px;
   color: #555;
   line-height: 1.6;
+  font-size: 1.2rem; /* Ajusta el valor según lo grande que quieras el texto */
 }
+
 
 /* Estil per a la secció de l'equip */
 .team {

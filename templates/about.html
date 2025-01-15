@@ -17,13 +17,48 @@
     <span></span>
   </label>
   <aside class="sidebar">
+    <!-- Menú lateral con tus enlaces -->
     <nav class="sidebar-nav">
       <ul>
         <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('about') }}">Qui Som</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
+    <!-- Separador visual opcional -->
+    <hr />
+
+    <!-- MENÚ D'IDIOMES -->
+    <nav class="sidebar-languages">
+      <ul>
+        <li>
+          <a href="{{ url_for('change_language', language='ca') }}">
+            <img src="{{ url_for('static', filename='images/flag-cat.png') }}" alt="Català" width="20" height="14">
+            Català
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('change_language', language='es') }}">
+            <img src="{{ url_for('static', filename='images/flag-es.png') }}" alt="Castellano" width="20" height="14">
+            Castellano
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('change_language', language='en') }}">
+            <img src="{{ url_for('static', filename='images/flag-uk.png') }}" alt="English" width="20" height="14">
+            English
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('change_language', language='fr') }}">
+            <img src="{{ url_for('static', filename='images/flag-fr.png') }}" alt="Français" width="20" height="14">
+            Français
+          </a>
+        </li>
+      </ul>
+    </nav>
+
   </aside>
 
   <!-- Hero amb imatges de fons però més petit -->
@@ -43,8 +78,11 @@
   <!-- Text explicatiu centrat -->
   <section class="about-us">
     <div class="container">
-      <h2>{{ _('Descobreix la nostra història i els nostres valors') }}</h2>
-      <p>{{ _('Som una empresa dedicada a oferir serveis immobiliaris professionals, amb un enfocament en la qualitat i l’atenció personalitzada. La nostra experiència i compromís ens permeten aportar solucions adaptades a les necessitats dels nostres clients.') }}</p>
+      <p>{{ _("Som en <strong>Jaume Triay</strong> i en <strong>Dídac Gibert</strong>, fundadors de <strong>Gibert & Triay</strong> i ara socis amb un objectiu clar: ajudar els propietaris d'immobles a treure el màxim profit de les seves propietats. Oferim solucions per aquells que volen invertir personalment en la reforma però no saben per on començar, amb qui parlar o no tenen temps. A més, per a aquells que no disposen dels recursos per finançar la reforma o no volen invertir-hi, oferim la possibilitat que un inversor cobreixi el cost de la reforma; en aquest cas, tot i que l'inversor obtindrà un benefici, el propietari del immoble rebrà el 45% del valor net de la inversió. Per aconseguir-ho, hem establert una col·laboració estratègica amb <strong>Vibbum</strong>, una empresa líder en interiorisme especialitzada en reformes integrals d'estil únic i modern. També comptem amb el suport de <strong>Propietats.cat</strong>, una immobiliària amb més de 30 anys d'experiència, que ens proporciona l'expertesa necessària per a la taxació, valoració i venda dels immobles reformats.") |safe }}</p>
+
+      <p>{{ _("Si ja vens a través d'una altra immobiliària, tot el procés de venda, valoració del preu i taxació es farà amb el teu agent de confiança. Així, podem assegurar-nos que tots els nostres clients rebin el millor servei possible, tant si venen per si sols com a través d'una immobiliària.") }}</p>
+
+      <p>{{ _("Amb aquesta aliança, oferim una solució completa i confiable que abasta des de la planificació de la reforma fins a la venda de la propietat, garantint així una experiència sense preocupacions per als nostres clients.") }}</p>
     </div>
   </section>
 
@@ -54,10 +92,10 @@
       <div class="team-members">
         <div class="member">
           <div class="photo-wrapper">
-            <img src="{{ url_for('static', filename='images/soci1.jpg') }}" alt="Nom Soci 1" class="member-photo">
+            <img src="{{ url_for('static', filename='images/soci11.jpg') }}" alt="Nom Soci 1" class="member-photo">
             <div class="photo-caption">
               <p><strong>Dídac Gibert</strong></p>
-              <p>{{ _('CEO & Fundador') }}</p>
+              <p>CEO & {{ _('Fundador') }}</p>
               <a href="https://www.linkedin.com/in/soci1" target="_blank">
                 <i class="fab fa-linkedin"></i>
               </a>
@@ -69,7 +107,7 @@
             <img src="{{ url_for('static', filename='images/soci2.jpeg') }}" alt="Nom Soci 2" class="member-photo">
             <div class="photo-caption">
               <p><strong>Jaume Triay</strong></p>
-              <p>{{ _('CTO & Fundador') }}</p>
+              <p>CTO & {{ _('Fundador') }}</p>
               <a href="https://www.linkedin.com/in/soci2" target="_blank">
                 <i class="fab fa-linkedin"></i>
               </a>
