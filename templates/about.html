@@ -1,28 +1,21 @@
-
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ g.lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gibert & Triay</title>
-  <!-- Vincula tu hoja de estilos -->
-  <link rel="stylesheet" href="static/css/style.css" />
+  <title>Qui Som? - Gibert & Triay</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png" />
 </head>
 <body>
-
-  <!-- 1) Checkbox oculto para controlar la barra lateral -->
+  <!-- Botó hamburguesa i Sidebar -->
   <input type="checkbox" id="menu-toggle" />
-
-  <!-- 2) Botón hamburguesa (3 líneas) -->
   <label for="menu-toggle" class="hamburger">
     <span></span>
     <span></span>
     <span></span>
   </label>
-
-  <!-- 3) SIDEBAR oculta; se despliega al marcar #menu-toggle -->
   <aside class="sidebar">
     <!-- Menú lateral con tus enlaces -->
     <nav class="sidebar-nav">
@@ -39,74 +32,121 @@
     <!-- MENÚ D'IDIOMES -->
     <nav class="sidebar-languages">
       <ul>
-        <!-- Les icones/imatges són només exemples, substitueix-les pels arxius reals -->
         <li>
-          <a href="#">
-            <img src="static/images/flag-cat.png" alt="Català" width="20" height="14">
+          <a href="{{ url_for('change_language', language='ca') }}">
+            <img src="{{ url_for('static', filename='images/flag-cat.png') }}" alt="Català" width="20" height="14">
             Català
           </a>
         </li>
         <li>
-          <a href="#">
-            <img src="static/images/flag-es.png" alt="Castellano" width="20" height="14">
+          <a href="{{ url_for('change_language', language='es') }}">
+            <img src="{{ url_for('static', filename='images/flag-es.png') }}" alt="Castellano" width="20" height="14">
             Castellano
           </a>
         </li>
         <li>
-          <a href="#">
-            <img src="static/images/flag-uk.png" alt="English" width="20" height="14">
+          <a href="{{ url_for('change_language', language='en') }}">
+            <img src="{{ url_for('static', filename='images/flag-uk.png') }}" alt="English" width="20" height="14">
             English
           </a>
         </li>
         <li>
-          <a href="#">
-            <img src="static/images/flag-fr.png" alt="Français" width="20" height="14">
+          <a href="{{ url_for('change_language', language='fr') }}">
+            <img src="{{ url_for('static', filename='images/flag-fr.png') }}" alt="Français" width="20" height="14">
             Français
           </a>
         </li>
       </ul>
     </nav>
+
   </aside>
 
-  <section class="about">
-    <div class="container">
-      <h2>Quiénes Somos</h2>
-      <p>Información detallada sobre tu empresa.</p>
-      <!-- Agrega más contenido según necesites -->
+  <!-- Hero amb imatges de fons però més petit -->
+  <section class="hero hero-about">
+    <div class="slideshow">
+      <div class="slide slide1"></div>
+      <div class="slide slide2"></div>
+      <div class="slide slide3"></div>
+    </div>
+    <div class="overlay">
+      <div class="hero-text">
+        <h1>{{ _('Qui Som?') }}</h1>
+      </div>
     </div>
   </section>
 
+  <!-- Text explicatiu centrat -->
+  <section class="about-us">
+    <div class="container">
+      <p>{{ _("Som en <strong>Jaume Triay</strong> i en <strong>Dídac Gibert</strong>, fundadors de <strong>Gibert & Triay</strong> i ara socis amb un objectiu clar: ajudar els propietaris d'immobles a treure el màxim profit de les seves propietats. Oferim solucions per aquells que volen invertir personalment en la reforma però no saben per on començar, amb qui parlar o no tenen temps. A més, per a aquells que no disposen dels recursos per finançar la reforma o no volen invertir-hi, oferim la possibilitat que un inversor cobreixi el cost de la reforma; en aquest cas, tot i que l'inversor obtindrà un benefici, el propietari del immoble rebrà el 45% del valor net de la inversió. Per aconseguir-ho, hem establert una col·laboració estratègica amb <strong>Vibbum</strong>, una empresa líder en interiorisme especialitzada en reformes integrals d'estil únic i modern. També comptem amb el suport de <strong>Propietats.cat</strong>, una immobiliària amb més de 30 anys d'experiència, que ens proporciona l'expertesa necessària per a la taxació, valoració i venda dels immobles reformats.") |safe }}</p>
+
+      <p>{{ _("Si ja vens a través d'una altra immobiliària, tot el procés de venda, valoració del preu i taxació es farà amb el teu agent de confiança. Així, podem assegurar-nos que tots els nostres clients rebin el millor servei possible, tant si venen per si sols com a través d'una immobiliària.") }}</p>
+
+      <p>{{ _("Amb aquesta aliança, oferim una solució completa i confiable que abasta des de la planificació de la reforma fins a la venda de la propietat, garantint així una experiència sense preocupacions per als nostres clients.") }}</p>
+    </div>
+  </section>
+
+  <!-- Fotos dels socis amb peu de foto -->
+  <section class="team">
+    <div class="container">
+      <div class="team-members">
+        <div class="member">
+          <div class="photo-wrapper">
+            <img src="{{ url_for('static', filename='images/soci11.jpg') }}" alt="Nom Soci 1" class="member-photo">
+            <div class="photo-caption">
+              <p><strong>Dídac Gibert</strong></p>
+              <p>CEO & {{ _('Fundador') }}</p>
+              <a href="https://www.linkedin.com/in/soci1" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="member">
+          <div class="photo-wrapper">
+            <img src="{{ url_for('static', filename='images/soci2.jpeg') }}" alt="Nom Soci 2" class="member-photo">
+            <div class="photo-caption">
+              <p><strong>Jaume Triay</strong></p>
+              <p>CTO & {{ _('Fundador') }}</p>
+              <a href="https://www.linkedin.com/in/soci2" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="main-footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <h3>Empresa</h3>
+        <h3>{{ _('Empresa') }}</h3>
         <ul>
-          <li><a href="#about">Quiénes Somos</a></li>
+          <li><a href="#about">{{ _('Qui Som') }}</a></li>
           <li><a href="#">Blog</a></li>
-          <li><a href="#">Trabaja con Nosotros</a></li>
+          <li><a href="#">{{ _('Treballa amb Nosotres') }}</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Recursos</h3>
+        <h3>{{ _('Recursos') }}</h3>
         <ul>
-          <li><a href="#">Preguntas Frecuentes</a></li>
-          <li><a href="#">Políticas de Privacidad</a></li>
-          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">{{ _('Preguntes Freqüents') }}</a></li>
+          <li><a href="#">{{ _('Polítiques de Privadesa') }}</a></li>
+          <li><a href="#">{{ _('Termes i Condicions') }}</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Contáctanos</h3>
-        <p>Dirección: Girona</p>
+        <h3>{{ _("Contacta'ns") }}</h3>
+        <p>{{ _('Direcció:') }} Girona</p>
         <p>Tel: +34 616 26 53 07</p>
         <p>Email: info@giberttriay.com</p>
       </div>
     </div>
     <div class="footer-copy">
-      <p>&copy; 2024 Gibert & Triay - Todos los derechos reservados.</p>
+      <p>&copy; 2024 Gibert & Triay - {{ _('Tots els drets reservats.') }}</p>
     </div>
   </footer>
-  
 </body>
 </html>

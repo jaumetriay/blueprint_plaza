@@ -21,6 +21,7 @@
     "Enviar Missatge": "Send Message",
     "Empresa": "Company",
     "Qui Som": "About Us",
+    "Qui Som?": "About Us?",
     "Treballa amb Nosotres": "Work with Us",
     "Recursos": "Resources",
     "Preguntes Freqüents": "Frequently Asked Questions",
@@ -35,5 +36,9 @@
     "Ciutat": "City",
     "Carrer": "Street",
     "Preu": "Price",
-    "Tornar": "Return"
+    "Tornar": "Return",
+    "Som en <strong>Jaume Triay</strong> i en <strong>Dídac Gibert</strong>, fundadors de <strong>Gibert & Triay</strong> i ara socis amb un objectiu clar: ajudar els propietaris d'immobles a treure el màxim profit de les seves propietats. Oferim solucions per aquells que volen invertir personalment en la reforma però no saben per on començar, amb qui parlar o no tenen temps. A més, per a aquells que no disposen dels recursos per finançar la reforma o no volen invertir-hi, oferim la possibilitat que un inversor cobreixi el cost de la reforma; en aquest cas, tot i que l'inversor obtindrà un benefici, el propietari del immoble rebrà el 45% del valor net de la inversió. Per aconseguir-ho, hem establert una col·laboració estratègica amb <strong>Vibbum</strong>, una empresa líder en interiorisme especialitzada en reformes integrals d'estil únic i modern. També comptem amb el suport de <strong>Propietats.cat</strong>, una immobiliària amb més de 30 anys d'experiència, que ens proporciona l'expertesa necessària per a la taxació, valoració i venda dels immobles reformats." : "We are <strong>Jaume Triay</strong> and <strong>Dídac Gibert</strong>, founders of <strong>Gibert & Triay</strong> and now partners with a clear goal: to help property owners maximize the potential of their properties. We offer solutions for those who want to personally invest in renovations but don’t know where to start, whom to talk to, or simply lack the time. Additionally, for those who don’t have the resources to finance the renovation or prefer not to invest in it, we offer the option for an investor to cover the renovation costs; in this case, while the investor will earn a profit, the property owner will receive 45% of the net value of the investment. To achieve this, we have established a strategic collaboration with <strong>Vibbum</strong>, a leading interior design company specializing in comprehensive renovations with a unique and modern style. We also have the support of <strong>Propietats.cat</strong>, a real estate agency with over 30 years of experience, providing us with the expertise necessary for the appraisal, valuation, and sale of renovated properties.",
+    "Si ja vens a través d'una altra immobiliària, tot el procés de venda, valoració del preu i taxació es farà amb el teu agent de confiança. Així, podem assegurar-nos que tots els nostres clients rebin el millor servei possible, tant si venen per si sols com a través d'una immobiliària." : "If you are already selling through another real estate agency, the entire sales process, price valuation, and appraisal will be handled with your trusted agent. This way, we can ensure that all our clients receive the best possible service, whether they sell independently or through a real estate agency.",
+    "Amb aquesta aliança, oferim una solució completa i confiable que abasta des de la planificació de la reforma fins a la venda de la propietat, garantint així una experiència sense preocupacions per als nostres clients." : "With this partnership, we offer a complete and reliable solution that covers everything from renovation planning to the sale of the property, ensuring a worry-free experience for our clients.",
+    "Fundador" : "Founder"
 }
