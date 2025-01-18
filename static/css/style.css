@@ -184,32 +184,32 @@ body {
 }
 
 .slide1 {
-  background-image: url("../images/01-1.jpg");
+  background-image: url("../images/slidehome/presentation_1.jpg");
   animation-delay: 0s;
 }
 
 .slide2 {
-  background-image: url("../images/07-1.jpg");
+  background-image: url("../images/slidehome/presentation_2.jpg");
   animation-delay: 3s;
 }
 
 .slide3 {
-  background-image: url("../images/08-1.jpg");
+  background-image: url("../images/slidehome/presentation_3.jpg");
   animation-delay: 6s;
 }
 
 .slide1detail1 {
-  background-image: url("../images/01-1-1.jpg");
+  background-image: url("../images/projects/project_1/project1_1.jpg");
   animation-delay: 0s;
 }
 
 .slide1detail2 {
-  background-image: url("../images/old-1.png");
+  background-image: url("../images/projects/project_2/project2_1.jpg");
   animation-delay: 3s;
 }
 
 .slide1detail3 {
-  background-image: url("../images/proj1_new.jpg");
+  background-image: url("../images/projects/project_3/project3_1.jpg");
   animation-delay: 6s;
 }
 

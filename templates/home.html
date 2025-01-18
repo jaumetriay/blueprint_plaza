@@ -7,7 +7,7 @@
   <!-- Vincula tu hoja de estilos -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png" />
+  <link rel="icon" href="{{ url_for('static', filename='images/logos/favicon.png') }}" type="image/png" />
 </head>
 <body>
 
@@ -40,25 +40,25 @@
       <ul>
         <li>
           <a href="{{ url_for('change_language', language='ca') }}">
-            <img src="{{ url_for('static', filename='images/flag-cat.png') }}" alt="Català" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flags/flag-cat.png') }}" alt="Català" width="20" height="14">
             Català
           </a>
         </li>
         <li>
           <a href="{{ url_for('change_language', language='es') }}">
-            <img src="{{ url_for('static', filename='images/flag-es.png') }}" alt="Castellano" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flags/flag-es.png') }}" alt="Castellano" width="20" height="14">
             Castellano
           </a>
         </li>
         <li>
           <a href="{{ url_for('change_language', language='en') }}">
-            <img src="{{ url_for('static', filename='images/flag-uk.png') }}" alt="English" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flags/flag-uk.png') }}" alt="English" width="20" height="14">
             English
           </a>
         </li>
         <li>
           <a href="{{ url_for('change_language', language='fr') }}">
-            <img src="{{ url_for('static', filename='images/flag-fr.png') }}" alt="Français" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flags/flag-fr.png') }}" alt="Français" width="20" height="14">
             Français
           </a>
         </li>
@@ -77,7 +77,7 @@
     <div class="overlay">
       <div class="hero-text">
         <!-- Logo centrado en el Hero (opcional) -->
-        <img src="static/images/logo.png" alt="Tu Logo" class="logo-hero" />
+        <img src="static/images/logos/logo.png" alt="Tu Logo" class="logo-hero" />
         <h1>{{ _('Donem servei professional al teu immoble') }}</h1>
       </div>
     </div>
@@ -129,7 +129,7 @@
           <a href="{{ url_for('project_detail', project_id=project.id) }}" class="project-card">
             <div class="project-image">
               <span class="new-project-label">{{ _('Projecte Nou') }}</span>
-              <img src="{{ url_for('static', filename='images/' + project.imagen) }}" alt="{{ project.nombre }}" class="vertical-image" />
+              <img src="{{ url_for('static', filename='images/projects/' + project.imagen) }}" alt="{{ project.nombre }}" class="vertical-image" />
               <div class="city-label">{{ project.ciudad }}</div>
             </div>
           </a>
