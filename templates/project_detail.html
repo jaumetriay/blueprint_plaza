@@ -8,7 +8,7 @@
   <title>Gibert & Triay</title>
   <!-- Vincula tu hoja de estilos -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-  <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png" />
+  <link rel="icon" href="{{ url_for('static', filename='images/logos/favicon.png') }}" type="image/png" />
 </head>
 <body>
 
@@ -41,25 +41,25 @@
       <ul>
         <li>
           <a href="{{ url_for('change_language', language='ca') }}">
-            <img src="{{ url_for('static', filename='images/flag-cat.png') }}" alt="Català" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flags/flag-cat.png') }}" alt="Català" width="20" height="14">
             Català
           </a>
         </li>
         <li>
           <a href="{{ url_for('change_language', language='es') }}">
-            <img src="{{ url_for('static', filename='images/flag-es.png') }}" alt="Castellano" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flags/flag-es.png') }}" alt="Castellano" width="20" height="14">
             Castellano
           </a>
         </li>
         <li>
           <a href="{{ url_for('change_language', language='en') }}">
-            <img src="{{ url_for('static', filename='images/flag-uk.png') }}" alt="English" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flags/flag-uk.png') }}" alt="English" width="20" height="14">
             English
           </a>
         </li>
         <li>
           <a href="{{ url_for('change_language', language='fr') }}">
-            <img src="{{ url_for('static', filename='images/flag-fr.png') }}" alt="Français" width="20" height="14">
+            <img src="{{ url_for('static', filename='images/flags/flag-fr.png') }}" alt="Français" width="20" height="14">
             Français
           </a>
         </li>
@@ -110,7 +110,7 @@
       <div class="tab-content" id="fotos">
         <div class="photos-gallery">
           {% for img in project.imagenes %}
-            <img src="{{ url_for('static', filename='images/' + img) }}" alt="{{ project.nombre }} foto" class="gallery-image" />
+            <img src="{{ url_for('static', filename='images/projects/' + img) }}" alt="{{ project.nombre }} foto" class="gallery-image" />
           {% endfor %}
         </div>
       </div>

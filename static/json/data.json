@@ -8,11 +8,11 @@
             "fr": "Projet Barcelone"
           },
           "ciudad": "Barcelona",
-          "imagen": "proj1_new.jpg",
+          "imagen": "project1_1.jpg",
           "imagenes": [
-            "proj1_new.jpg",
-            "old-1.png",
-            "proj2_new.jpg"
+            "project1_1.jpg",
+            "project1_2.png",
+            "project1_3.jpg"
           ],
           "descripcion": {
             "ca": "Descripció detallada del Projecte Barcelona.",
@@ -32,11 +32,11 @@
             "fr": "Projet Madrid"
           },
           "ciudad": "Madrid",
-          "imagen": "new-1.png",
+          "imagen": "project2_1.jpg",
           "imagenes": [
-            "01-1-1.jpg",
-            "proj2_new.jpg",
-            "proj10_new.jpg"
+            "project2_1.jpg",
+            "project2_2.jpg",
+            "project2_3.jpg"
           ],
           "descripcion": {
             "ca": "Descripció detallada del Projecte Madrid.",
@@ -56,11 +56,11 @@
             "fr": "Projet Valencia"
           },
           "ciudad": "Valencia",
-          "imagen": "proj20_new.jpg",
+          "imagen": "project3_1.jpg",
           "imagenes": [
-            "proj20_new.jpg",
-            "proj11_1.jpg",
-            "old-4.png"
+            "project3_1.jpg",
+            "project3_2.jpg",
+            "project3_3.jpg"
           ],
           "descripcion": {
             "ca": "Descripció detallada del Projecte Valencia.",
